@@ -36,53 +36,54 @@
   </header>
   <main>
     <section>
+      <h2>Навигационная цепочка</h2>
       <ul>
         <li><a href="catalog.html">Каталог</a></li>
         <li><a href="blank.html">Инструмент</a></li>
         <li>Перфораторы</li>
       </ul>
     </section>
-    <section>
+    <div>
       <h1>Перфораторы</h1>
-    </section>
+    </div>
     <section>
       <h2>Фильтр товаров по производителям</h2>
       <form action="https://echo.htmlacademy.ru" method="get">
         <fieldset>
-          <legend>ПРОИЗВОДИТЕЛИ:</legend>
+          <legend>Производители:</legend>
           <ul>
             <li>
               <input type="checkbox" name="bosh" id="filter-bosch" checked>
-              <label for="filter-bosch">BOSCH</label>
+              <label for="filter-bosch">Bosch</label>
             </li>
             <li>
               <input type="checkbox" name="interskol" id="filter-interskol">
-              <label for="filter-interskol">ИНТЕРСКОЛ</label>
+              <label for="filter-interskol">Интерскол</label>
             </li>
             <li>
               <input type="checkbox" name="makita" id="filter-makita" checked>
-              <label for="filter-makita">MAKITA</label>
+              <label for="filter-makita">Makita</label>
             </li>
             <li>
               <input type="checkbox" name="dewalt" id="filter-dewalt">
-              <label for="">DEWALT</label>
+              <label for="">Dewalt</label>
             </li>
             <li>
               <input type="checkbox" name="hitachi" id="filter-hitachi">
-              <label for="filter-hitachi">HITACHI</label>
+              <label for="filter-hitachi">Hitachi</label>
             </li>
           </ul>
         </fieldset>
         <fieldset>
-          <legend>ПИТАНИЕ:</legend>
+          <legend>Питание:</legend>
           <ul>
             <li>
               <input type="radio" name="energy-type" value="accumulator" id="filter-accumulator" checked>
-              <label for="filter-accumulator">АККУМУЛЯТОРНЫЕ</label><br>
+              <label for="filter-accumulator">Аккумуляторные</label><br>
             </li>
             <li>
               <input type="radio" name="energy-type" value="mains-power" id="filter-mains-power">
-              <label for="filter-mains-power">СЕТЕВЫЕ</label>
+              <label for="filter-mains-power">Сетевые</label>
             </li>
           </ul>
         </fieldset>
@@ -252,15 +253,13 @@
     <p>Разработано —<br>
       <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></p>
   </footer>
-  <div class="basket-popup">
+  <section class="basket-popup">
     <button type="button" aria-label="Закрыть"></button>
     <h2>Товар добавлен в корзину!</h2>
-    <!-- Возможно здесь "Оформить заказ"-ссылка,отправляющая на страницу
-    оформления заказа,а "продолжить покупки-кнопка,имеющая ту же функцию,
-    что и кнопка закрытия?"  -->
+    <!-- Если я правильно тебя понял,то это всё таки кнопка. -->
     <a href="blank.html">Оформить заказ</a>
-    <a href="blank.html">Продолжить покупки</a>
-  </div>
+    <button type="button" aria-label="Продолжить покупки">Продолжить покупки</button>
+  </section>
 </body>
 
 </html>
