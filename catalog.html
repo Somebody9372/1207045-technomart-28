@@ -45,7 +45,50 @@
     <section>
       <h1>Перфораторы</h1>
     </section>
-    <!-- Здесь будут формы -->
+    <section>
+      <h2>Фильтр товаров по производителям</h2>
+      <form action="https://echo.htmlacademy.ru" method="get">
+        <fieldset>
+          <legend>ПРОИЗВОДИТЕЛИ:</legend>
+          <ul>
+            <li>
+              <input type="checkbox" name="bosh" id="filter-bosch" checked>
+              <label for="filter-bosch">BOSCH</label>
+            </li>
+            <li>
+              <input type="checkbox" name="interskol" id="filter-interskol">
+              <label for="filter-interskol">ИНТЕРСКОЛ</label>
+            </li>
+            <li>
+              <input type="checkbox" name="makita" id="filter-makita" checked>
+              <label for="filter-makita">MAKITA</label>
+            </li>
+            <li>
+              <input type="checkbox" name="dewalt" id="filter-dewalt">
+              <label for="">DEWALT</label>
+            </li>
+            <li>
+              <input type="checkbox" name="hitachi" id="filter-hitachi">
+              <label for="filter-hitachi">HITACHI</label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend>ПИТАНИЕ:</legend>
+          <ul>
+            <li>
+              <input type="radio" name="energy-type" value="accumulator" id="filter-accumulator">
+              <label for="filter-accumulator" checked>АККУМУЛЯТОРНЫЕ</label><br>
+            </li>
+            <li>
+              <input type="radio" name="energy-type" value="mains-power" id="filter-mains-power">
+              <label for="filter-mains-power">СЕТЕВЫЕ</label>
+            </li>
+          </ul>
+        </fieldset>
+        <button type="submit">Показать</button>
+      </form>
+    </section>
     <section>
       <h2>Сортировка товаров</h2>
       <p>Сортировка</p>
@@ -209,6 +252,15 @@
     <p>Разработано —<br>
       <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></p>
   </footer>
+  <div class="basket-popup">
+    <button type="button" aria-label="Закрыть"></button>
+    <h2>Товар добавлен в корзину!</h2>
+    <!-- Возможно здесь "Оформить заказ"-ссылка,отправляющая на страницу
+    оформления заказа,а "продолжить покупки-кнопка,имеющая ту же функцию,
+    что и кнопка закрытия?"  -->
+    <a href="blank.html">Оформить заказ</a>
+    <a href="blank.html">Продолжить покупки</a>
+  </div>
 </body>
 
 </html>
