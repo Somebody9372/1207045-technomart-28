@@ -51,10 +51,10 @@
       <form action="https://echo.htmlacademy.ru" method="get">
         <fieldset>
           <legend>Цена:</legend>
-          <input type="range" min="0" max="30000" step="1">
-          <input type="range" min="0" max="30000" step="1">
-          <span>0</span>
-          <span>30000</span>
+          <label for="price-min" class="visually-hidden">Цена,от</label>
+          <input type="number" name="price-min" id="price-min" step="1">
+          <label for="price-max" class="visually-hidden">Цена,до</label>
+          <input type="number" name="price-max" id="price-max" step="1">
         </fieldset>
         <fieldset>
           <legend>Производители:</legend>
