@@ -1,0 +1,429 @@
+
+:root {
+  --basic-black: #000000;
+  --basic-white: #ffffff;
+  --red: #EE3643;
+  --dark-red: #BA2732;
+  --blue: #32425C;
+  --dark-blue: #161D29;
+  --yellow: #FFDA96;
+  --basic-green: #63A63E;
+  --green-success: #5FBB2D;
+  --grey: #C5C5C5;
+  --grey-del: #A9A9A9;
+}
+
+/* Global
+=================== */
+
+body {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--basic-black);
+
+  min-width: 940px;
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* Тут пожно было использовать min-width: 960px,
+  но решил попробовать так */
+  background-color: var(--basic-white);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0;
+	border:0;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+/* Button-red
+======================== */
+.button-red {
+  font-size: 14px;
+  line-height: 18px;
+  background-color: var(--red);
+  color: var(--basic-white);
+}
+
+.button-red:active {
+  background-color: var(--dark-red);
+}
+
+/* Header
+======================= */
+.header-panel {
+  background-color: var(--blue);
+}
+
+.header-panel input {
+  color: var(--basic-white);
+  background-color: transparent;
+  border: none;
+}
+
+::-webkit-input-placeholder {
+  color: var(--basic-white);
+}
+::-moz-placeholder {
+  color: var(--basic-white);
+}/* Firefox 19+ */
+:-moz-placeholder {
+  color: var(--basic-white);
+}/* Firefox 18- */
+
+.header-panel input:focus::-webkit-input-placeholder {
+   color:transparent;
+}
+.header-panel input:focus:-moz-placeholder {
+  color:transparent;
+} /* FF 4-18 */
+.header-panel input:focus::-moz-placeholder {
+   color:transparent;
+} /* FF 19+ */
+
+.header-button {
+  font-size: 18px;
+  text-decoration: none;
+  color: var(--basic-white)
+}
+
+.button-green {
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--basic-white);
+  background-color: var(--basic-green);
+}
+
+.header-text {
+  font-size: 16px;
+  line-height: 23px;
+  font-style: italic;
+  color: var(--red)
+}
+
+.header-tel {
+  font-size: 21px;
+  line-height: 30px;
+  font-weight: bold;
+  color: var(--red)
+}
+
+.header-address{
+  font-size: 14px;
+  font-style: normal;
+  color: var(--blue)
+}
+
+.user-nav {
+  list-style: none;
+}
+
+.user-nav-link {
+  font-size: 21px;
+  line-height: 21px;
+  color: var(--basic-black);
+}
+
+/* Header-effects */
+
+.header-logo:active {
+  background-color: var(--dark-red);
+
+}
+
+.header-panel input:focus {
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+}
+
+
+.header-button:active {
+  background-color: var(--dark-blue);
+ }
+
+.button-green:hover {
+  background-color: var(--green-success);
+}
+
+.user-nav-link:hover {
+  color: var(--red);
+}
+
+.user-nav-link:active {
+  color: var(--grey);
+}
+
+
+/* Navigation
+===================== */
+
+.nav {
+  background-color: var(--blue);
+}
+
+.nav-list {
+  list-style: none;
+
+}
+
+.nav-link {
+  color: var(--basic-white)
+}
+
+/* Nav-effects */
+
+.nav-link:hover {
+ background-color: var(--dark-blue);
+}
+
+.nav-link:active {
+  background-color: var(--dark-blue);
+  opacity: 0.5;
+ }
+
+/* promo
+===================== */
+
+/* .promo-title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color: var(--basic-white);
+}
+
+.promo-link {
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--basic-white);
+} */
+
+/* About
+============================ */
+
+.about-title {
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.about-text {
+  font-family: ""PT Sans",Arial,sans-serif;";
+  font-size: 13px;
+}
+
+.about-list {
+  list-style: none;
+}
+
+/* Contacts
+==================== */
+
+.contacts-title {
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.contacts-text {
+  font-family: ""PT Sans",Arial,sans-serif;";
+}
+
+/* Catalog-page
+===================== */
+
+/*Catalog-page header
+=================== */
+
+.user-name {
+  text-decoration: none;
+  font-size: 21px;
+  line-height: 21px;
+  color: var(--basic-black);
+}
+
+.catalog-page .user-nav-link {
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--blue);
+}
+
+/*Catalog-page header-effects
+============================= */
+
+.catalog-page .user-nav-link:hover {
+  color: var(--red);
+}
+
+.user-name:active,
+.catalog-page .user-nav-link:active {
+  color: var(--grey);
+}
+
+/* Bread crumbs
+=========================== */
+
+.bread-crumbs-list {
+  list-style: none;
+}
+
+.bread-crumbs-list-item,
+.bread-crumbs-list-item a {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--basic-black);
+}
+
+/* h1 */
+
+main h1 {
+  font-size: 30px;
+  line-height: 30px;
+  color: var(--blue)
+}
+
+/* Filters
+=================== */
+.filter-list{
+  list-style: none;
+}
+
+.filter-item {
+  font-family: ""PT Sans",Arial,sans-serif;";
+  font-size: 15px;
+  line-height: 19px;
+}
+
+.button-submit {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* Products
+====================== */
+.products-item {
+  font-size: 17px;
+  line-height: 18px;
+}
+
+.products-item h3 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 20px;
+  color: var(--basic-black);
+}
+
+.products-item s {
+  color: var(--grey-del);
+}
+
+.products-item span {
+  /* тут vertical-align почему-то не работает,
+  возможно в дальшнейшем двину паддингом */
+  vertical-align: middle;
+  text-align: center;
+  background-image: url(../img/button-price.png);
+  background-repeat: no-repeat;
+  color: var(--basic-white);
+  display: inline-block;
+  height: 38px;
+  width: 141px;
+
+}
+
+/* Footer
+==================== */
+.footer {
+  background-color: var(--blue);
+}
+
+.footer-address {
+  font-style: normal;
+}
+
+.list-top-item,
+.list-bot-item {
+  list-style: none;
+}
+
+.list-top-item a {
+  list-style: none;
+  color: var(--basic-white);
+
+}
+
+.list-bot-item a {
+  list-style: none;
+  color: var(--yellow)
+}
+
+.footer-contacts {
+  background-color: var(--dark-blue);
+}
+
+.footer-copyright {
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--basic-white)
+}
+
+.social-list {
+  list-style: none;
+}
+
+.footer-feedback {
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--basic-white)
+}
+
+.footer-feedback a {
+  color: var(--yellow);
+}
+
+.footer-developer {
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--basic-white)
+}
+
+.footer-developer a {
+  color: var(--yellow);
+}
+
+.map-popup {
+  display: none;
+}
+
+/* Footer-effects */
+
+.list-top-item a:hover,
+.list-bot-item a:hover {
+  text-decoration: underline;
+}
+
+.list-top-item a:active,
+.list-bot-item a:active {
+  opacity: 0.5;
+}
+
+.footer-feedback a:hover,
+.footer-developer a:hover {
+  text-decoration: underline;
+}
+
+.footer-feedback a:active,
+.footer-developer a:active {
+  color: var(--dark-red);
+}
