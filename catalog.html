@@ -62,12 +62,14 @@
       <form action="https://echo.htmlacademy.ru" method="get">
         <fieldset>
           <legend>Цена:</legend>
-          <button type="button"></button>
-          <button type="button"></button>
+          <div class="button-wrapper">
+            <button type="button"></button>
+            <button type="button"></button>
+          </div>
           <label for="price-min" class="visually-hidden">Цена,от</label>
-          <input type="number" name="price-min" id="price-min" step="1">
+          <input type="number" name="price-min" id="price-min" step="1" aria-label="Цена,от">
           <label for="price-max" class="visually-hidden">Цена,до</label>
-          <input type="number" name="price-max" id="price-max" step="1">
+          <input type="number" name="price-max" id="price-max" step="1" aria-label="Цена,до">
         </fieldset>
         <fieldset>
           <legend>Производители:</legend>
