@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="catalog-page">
+<body>
   <header class="header">
     <div class="header-panel">
       <a class="header-logo">
@@ -21,7 +21,9 @@
         <input type="text" name="search" id="search-field" placeholder="Поиск:" aria-label="Поле для поиска">
       </form>
       <a href="blank.html" class="header-button">Закладки</a>
-      <a href="blank.html" class="header-button">Корзина</a>
+      <!-- Можеть быть тут было лучше не менять класс,а добавить див,положить в него
+      ссылку на корзину,и используя вложенность поменять слиль дял ссылки? -->
+      <a href="blank.html" class="header-basket">Корзина: 10</a>
       <a href="blank.html" class="button-green">Оформить заказ</a>
     </div>
 
@@ -29,9 +31,9 @@
     <a href="tel:88125550555" class="header-tel">+7 (812) 555-05-55</a>
     <address class="header-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</address>
     <a href="blank.html" class="user-name">Равшан Джамшутович</a>
-    <ul class="user-nav">
-      <li><a href="blank.html" class="user-nav-link">Мои заказы</a></li>
-      <li><a href="blank.html" class="user-nav-link">Личный кабинет</a></li>
+    <ul class="user-profile">
+      <li><a href="blank.html" class="user-profile-link">Мои заказы</a></li>
+      <li><a href="blank.html" class="user-profile-link">Личный кабинет</a></li>
     </ul>
     <nav class="nav">
       <ul class="nav-list">
@@ -63,13 +65,17 @@
         <fieldset>
           <legend>Цена:</legend>
           <div class="button-wrapper">
-            <button type="button"></button>
-            <button type="button"></button>
+            <button type="button" aria-hidden="true">
+              <span class="visually-hidden">Цена,от</span>
+            </button>
+            <button type="button" aria-hidden="true">
+              <span class="visually-hidden">Цена,до</span>
+            </button>
           </div>
           <label for="price-min" class="visually-hidden">Цена,от</label>
-          <input type="number" name="price-min" id="price-min" step="1" aria-label="Цена,от">
+          <input type="number" name="price-min" id="price-min" step="1" value="0">
           <label for="price-max" class="visually-hidden">Цена,до</label>
-          <input type="number" name="price-max" id="price-max" step="1" aria-label="Цена,до">
+          <input type="number" name="price-max" id="price-max" step="1" value="30000">
         </fieldset>
         <fieldset>
           <legend>Производители:</legend>
@@ -267,17 +273,17 @@
         <a href="blank.html">Контакты</a>
       </li>
     </ul>
-    <ul class="footer-list-bot">
-      <li class="list-bot-item">
+    <ul class="footer-list-bottom">
+      <li class="list-bottom-item">
         <a href="blank.html">Материалы</a>
       </li>
-      <li class="list-bot-item">
+      <li class="list-bottom-item">
         <a href="blank.html">Техника</a>
       </li>
-      <li class="list-bot-item">
+      <li class="list-bottom-item">
         <a href="blank.html">Инструмент</a>
       </li>
-      <li class="list-bot-item">
+      <li class="list-bottom-item">
         <a href="blank.html">Спецпредложения</a>
       </li>
     </ul>

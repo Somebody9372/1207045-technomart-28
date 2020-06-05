@@ -1,7 +1,8 @@
 
 :root {
-  --basic-black: #000000;
-  --basic-white: #ffffff;
+  --black: #000000;
+  --white: #ffffff;
+  --beige: #F7F3EC;
   --red: #EE3643;
   --dark-red: #BA2732;
   --blue: #32425C;
@@ -20,7 +21,7 @@ body {
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
-  color: var(--basic-black);
+  color: var(--black);
 
   min-width: 940px;
   margin: 0;
@@ -29,7 +30,7 @@ body {
   padding-right: 10px;
   /* Тут пожно было использовать min-width: 960px,
   но решил попробовать так */
-  background-color: var(--basic-white);
+  background-color: var(--white);
 }
 
 a {
@@ -56,7 +57,7 @@ img {
   font-size: 14px;
   line-height: 18px;
   background-color: var(--red);
-  color: var(--basic-white);
+  color: var(--white);
 }
 
 .button-red:active {
@@ -70,41 +71,30 @@ img {
 }
 
 .header-panel input {
-  color: var(--basic-white);
+  color: var(--white);
   background-color: transparent;
   border: none;
 }
 
-::-webkit-input-placeholder {
-  color: var(--basic-white);
+::placeholder {
+  color: var(--white);
 }
-::-moz-placeholder {
-  color: var(--basic-white);
-}/* Firefox 19+ */
-:-moz-placeholder {
-  color: var(--basic-white);
-}/* Firefox 18- */
 
-.header-panel input:focus::-webkit-input-placeholder {
+.header-panel input:focus::placeholder {
    color:transparent;
 }
-.header-panel input:focus:-moz-placeholder {
-  color:transparent;
-} /* FF 4-18 */
-.header-panel input:focus::-moz-placeholder {
-   color:transparent;
-} /* FF 19+ */
+
 
 .header-button {
   font-size: 18px;
   text-decoration: none;
-  color: var(--basic-white)
+  color: var(--white)
 }
 
 .button-green {
   font-size: 18px;
   line-height: 24px;
-  color: var(--basic-white);
+  color: var(--white);
   background-color: var(--basic-green);
 }
 
@@ -135,7 +125,7 @@ img {
 .user-nav-link {
   font-size: 21px;
   line-height: 21px;
-  color: var(--basic-black);
+  color: var(--black);
 }
 
 /* Header-effects */
@@ -146,8 +136,8 @@ img {
 }
 
 .header-panel input:focus {
-  color: var(--basic-black);
-  background-color: var(--basic-white);
+  color: var(--black);
+  background-color: var(--white);
 }
 
 
@@ -181,7 +171,7 @@ img {
 }
 
 .nav-link {
-  color: var(--basic-white)
+  color: var(--white)
 }
 
 /* Nav-effects */
@@ -202,13 +192,13 @@ img {
   font-weight: bold;
   font-size: 24px;
   line-height: 30px;
-  color: var(--basic-white);
+  color: var(--white);
 }
 
 .promo-link {
   font-size: 14px;
   line-height: 18px;
-  color: var(--basic-white);
+  color: var(--white);
 } */
 
 /* About
@@ -220,7 +210,7 @@ img {
 }
 
 .about-text {
-  font-family: ""PT Sans",Arial,sans-serif;";
+  font-family: "PT Sans",Arial,sans-serif;
   font-size: 13px;
 }
 
@@ -237,7 +227,7 @@ img {
 }
 
 .contacts-text {
-  font-family: ""PT Sans",Arial,sans-serif;";
+  font-family: "PT Sans",Arial,sans-serif;
 }
 
 /* Catalog-page
@@ -245,29 +235,37 @@ img {
 
 /*Catalog-page header
 =================== */
+.header-basket {
+  font-size: 18px;
+  text-decoration: none;
+  color: var(--white);
+  background-color: var(--red);
+}
 
 .user-name {
   text-decoration: none;
   font-size: 21px;
   line-height: 21px;
-  color: var(--basic-black);
+  color: var(--black);
 }
 
-.catalog-page .user-nav-link {
+.user-profile-link {
   font-size: 16px;
   line-height: 18px;
   color: var(--blue);
 }
 
+
+
 /*Catalog-page header-effects
 ============================= */
 
-.catalog-page .user-nav-link:hover {
+.user-profile-link:hover {
   color: var(--red);
 }
 
 .user-name:active,
-.catalog-page .user-nav-link:active {
+.user-profile-link:active {
   color: var(--grey);
 }
 
@@ -282,12 +280,12 @@ img {
 .bread-crumbs-list-item a {
   font-size: 13px;
   line-height: 18px;
-  color: var(--basic-black);
+  color: var(--black);
 }
 
 /* h1 */
 
-main h1 {
+.main h1 {
   font-size: 30px;
   line-height: 30px;
   color: var(--blue)
@@ -300,7 +298,7 @@ main h1 {
 }
 
 .filter-item {
-  font-family: ""PT Sans",Arial,sans-serif;";
+  font-family: "PT Sans",Arial,sans-serif;
   font-size: 15px;
   line-height: 19px;
 }
@@ -308,6 +306,17 @@ main h1 {
 .button-submit {
   font-size: 13px;
   line-height: 18px;
+}
+
+/* Тут просто скопировал из нагугленного,
+вроде работает) */
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 /* Products
@@ -321,7 +330,7 @@ main h1 {
   font-weight: bold;
   font-size: 18px;
   line-height: 20px;
-  color: var(--basic-black);
+  color: var(--black);
 }
 
 .products-item s {
@@ -333,9 +342,9 @@ main h1 {
   возможно в дальшнейшем двину паддингом */
   vertical-align: middle;
   text-align: center;
-  background-image: url(../img/button-price.png);
+  background-image: url(../img/button-price.svg);
   background-repeat: no-repeat;
-  color: var(--basic-white);
+  color: var(--white);
   display: inline-block;
   height: 38px;
   width: 141px;
@@ -353,17 +362,17 @@ main h1 {
 }
 
 .list-top-item,
-.list-bot-item {
+.list-bottom-item {
   list-style: none;
 }
 
 .list-top-item a {
   list-style: none;
-  color: var(--basic-white);
+  color: var(--white);
 
 }
 
-.list-bot-item a {
+.list-bottom-item a {
   list-style: none;
   color: var(--yellow)
 }
@@ -375,7 +384,7 @@ main h1 {
 .footer-copyright {
   font-size: 16px;
   line-height: 18px;
-  color: var(--basic-white)
+  color: var(--white)
 }
 
 .social-list {
@@ -385,7 +394,7 @@ main h1 {
 .footer-feedback {
   font-size: 16px;
   line-height: 18px;
-  color: var(--basic-white)
+  color: var(--white)
 }
 
 .footer-feedback a {
@@ -395,7 +404,7 @@ main h1 {
 .footer-developer {
   font-size: 16px;
   line-height: 18px;
-  color: var(--basic-white)
+  color: var(--white)
 }
 
 .footer-developer a {
@@ -409,12 +418,12 @@ main h1 {
 /* Footer-effects */
 
 .list-top-item a:hover,
-.list-bot-item a:hover {
+.list-bottom-item a:hover {
   text-decoration: underline;
 }
 
 .list-top-item a:active,
-.list-bot-item a:active {
+.list-bottom-item a:active {
   opacity: 0.5;
 }
 
