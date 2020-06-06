@@ -3,15 +3,21 @@
   --black: #000000;
   --white: #ffffff;
   --beige: #F7F3EC;
+  --red-basic: red;
   --red: #EE3643;
   --dark-red: #BA2732;
+  --blue-special: #3BBCE3;
   --blue: #32425C;
   --dark-blue: #161D29;
   --yellow: #FFDA96;
+  --yellow-special: #FFBF47;
+  --yellow-light: #FFC047;
   --basic-green: #63A63E;
   --green-success: #5FBB2D;
+  --green-light: #8ED78F;
   --grey: #C5C5C5;
   --grey-del: #A9A9A9;
+  --lilac-special: #DC91D8;
 }
 
 /* Global
@@ -188,7 +194,7 @@ img {
 /* promo
 ===================== */
 
-/* .promo-title {
+.promo-title {
   font-weight: bold;
   font-size: 24px;
   line-height: 30px;
@@ -199,7 +205,162 @@ img {
   font-size: 14px;
   line-height: 18px;
   color: var(--white);
-} */
+}
+
+.section-item {
+  width: 300px;
+  height: 123px;
+}
+
+/* Тут не совсем понимаю.Что бы всё заработало,надо начинать
+с :nth-child(2),но по логике сначала идёт
+.section-item:first-child и т.д.
+Ещё не могу понять,почему не срабатывает смена цвета текста,
+ведь этот селектор спецефичней?
+и + section-slider почему-то наехал на section-item? */
+
+.section-item:nth-child(2) {
+  background-color: var(--yellow-special);
+  color: blueviolet;
+}
+
+.section-item:nth-child(3) {
+  background-color: var(--blue-special);
+}
+
+.section-item:nth-child(4) {
+  background-color: var(--lilac-special);
+}
+
+.featues-slider-title {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 36px;
+  color: var(--white)
+}
+
+.featues-slider-text {
+  color:var(--white)
+}
+
+
+.section-item:nth-child(6) {
+  background-color: var(--green-light);
+}
+
+.section-item:nth-child(7) {
+  background-color: var(--yellow-light);
+}
+
+/* Popular
+========================= */
+
+.popular-title {
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.popular-list {
+  list-style: none;
+}
+
+.popular-item-title {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 20px;
+  color: var(--black)
+}
+
+.popular-item s{
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 18px;
+  color: var(--grey-del);
+}
+
+.popular-item span {
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 38px;
+  text-align: center;
+  color: var(--white);
+  background-image: url(../img/button-price.svg);
+  display: block;
+  width: 141px;
+  height: 38px;
+
+}
+
+/* Manufacturer
+ ============================*/
+
+.manufacturer-list {
+  list-style: none;
+}
+
+.manufacturer-title {
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+ /* Servises
+ =========================== */
+
+.services-description:first-of-type {
+  background-image: url(../img/service-deliver.png);
+  background-repeat: no-repeat;
+  background-size: 468px 261px;
+}
+
+.services-description:nth-of-type(2) {
+  background-image: url(../img/service-garant.png);
+  background-repeat: no-repeat;
+}
+
+.services-description:nth-of-type(3) {
+  background-image: url(../img/service-credit.png);
+  background-repeat: no-repeat;
+}
+
+.services-title {
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.services-list{
+   list-style: none;
+}
+
+.services-link {
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 30px;
+  color: var(--white);
+  background-color: var(--blue);
+}
+
+.services-link-active {
+  color: var(--blue);
+  background-color: var(--white);
+}
+
+.services-description h3{
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.services-description p {
+  font-size: 13px;
+  color: var(--black);
+}
 
 /* About
 ============================ */
@@ -288,11 +449,20 @@ img {
 .main h1 {
   font-size: 30px;
   line-height: 30px;
-  color: var(--blue)
+  text-transform: uppercase;
+  color: var(--blue);
 }
 
 /* Filters
 =================== */
+.filters h2 {
+  font-weight: normal;
+  font-family: "PT Sans",Arial,sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
 .filter-list{
   list-style: none;
 }
@@ -308,8 +478,6 @@ img {
   line-height: 18px;
 }
 
-/* Тут просто скопировал из нагугленного,
-вроде работает) */
 input[type='number'] {
     -moz-appearance:textfield;
 }
@@ -319,8 +487,56 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
+/* Sorting
+====================== */
+
+.sorting h3 {
+  font-family: "PT Sans",Arial,sans-serif;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+/* Можно ли было здесь зделать то же самое,но не
+дублируя код? */
+.sotring-link:not(.sotring-link-active) {
+  font-family: "PT Sans",Arial,sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: var(--black);
+  opacity: 0.3;
+  border-bottom: 1px dashed var(--black);
+
+}
+
+.sotring-link-active {
+  font-family: "PT Sans",Arial,sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+/* Sorting-effects
+====================== */
+.sotring-link:not(.sotring-link-active):hover {
+  opacity: 1;
+}
+
+.sotring-link-active:hover {
+  color: var(--red-basic);
+}
+
 /* Products
 ====================== */
+
+.products-list {
+  list-style: none;
+}
+
 .products-item {
   font-size: 17px;
   line-height: 18px;
@@ -338,9 +554,7 @@ input::-webkit-inner-spin-button {
 }
 
 .products-item span {
-  /* тут vertical-align почему-то не работает,
-  возможно в дальшнейшем двину паддингом */
-  vertical-align: middle;
+
   text-align: center;
   background-image: url(../img/button-price.svg);
   background-repeat: no-repeat;
@@ -349,6 +563,34 @@ input::-webkit-inner-spin-button {
   height: 38px;
   width: 141px;
 
+}
+
+/* Site-nav
+==================== */
+
+.site-nav-item a{
+  font-family: "PT Sans",Arial,sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--black);
+}
+
+.site-nav-item-active {
+  background-color: var(--red);
+}
+
+/* Perforator-description
+==================== */
+
+.perforator-description h2 {
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.perforator-description p {
+font-size: 13px;
+line-height: 24px;
 }
 
 /* Footer
@@ -410,8 +652,13 @@ input::-webkit-inner-spin-button {
 .footer-developer a {
   color: var(--yellow);
 }
+/* Popups */
 
 .map-popup {
+  display: none;
+}
+
+.basket-popup {
   display: none;
 }
 
@@ -436,3 +683,17 @@ input::-webkit-inner-spin-button {
 .footer-developer a:active {
   color: var(--dark-red);
 }
+
+
+/* По окончанию задания возникло ещё пара вопросов.
+ Стоит-ли использовать так сказать относительно глобальные стили?
+ т.е. если например я вижу что в шапке весь текст белый,могу ли я задать color:#fff; сразу для всеей шапки,
+ или всё таки лучше каждому конкретному тегу?
+То-же самое по заголовкам,почти все имеют одинаковые стили,тогда можеть быть лучше задать всем им допольнительно
+ class="title", и все стили задать именно ему?
+ И ещё,мне показалось что я пишу стили как-то топортно,что ли. Т.е. мало использую доп.классы,а вместо этого просто
+ меняю класс и польностью переписываю под него стили,мало использую псевдоклассы типа :first-of-type и т.п.
+ Каково твоё мнение?
+ Заранее спасибо за ответы!
+
+  */

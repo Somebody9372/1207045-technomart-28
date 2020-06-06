@@ -21,8 +21,6 @@
         <input type="text" name="search" id="search-field" placeholder="Поиск:" aria-label="Поле для поиска">
       </form>
       <a href="blank.html" class="header-button">Закладки</a>
-      <!-- Можеть быть тут было лучше не менять класс,а добавить див,положить в него
-      ссылку на корзину,и используя вложенность поменять слиль дял ссылки? -->
       <a href="blank.html" class="header-basket">Корзина: 10</a>
       <a href="blank.html" class="button-green">Оформить заказ</a>
     </div>
@@ -118,12 +116,12 @@
         <button type="submit" class="button-submit">Показать</button>
       </form>
     </section>
-    <section>
-      <h2>Сортировка товаров</h2>
-      <p>Сортировка</p>
-      <a href="blank.html">По цене</a>
-      <a href="blank.html">По типу</a>
-      <a href="blank.html">По функционалу</a>
+    <section class="sorting">
+      <h2 class="visually-hidden">Сортировка товаров</h2>
+      <h3>Сортировка:</h3>
+      <a href="blank.html" class="sotring-link sotring-link-active">По цене</a>
+      <a href="blank.html" class="sotring-link">По типу</a>
+      <a href="blank.html" class="sotring-link">По функционалу</a>
     </section>
     <section class="products">
       <ul class="products-list">
@@ -227,22 +225,25 @@
           </a>
         </li>
       </ul>
-      <ul>
-        <li>
-          <a href="blank.html">1</a>
-        </li>
-        <li>
-          <a href="blank.html">2</a>
-        </li>
-        <li>
-          <a href="blank.html">3</a>
-        </li>
-        <li>
-          <a href="blank.html">Следующая</a>
-        </li>
-      </ul>
+      <section class="site-nav">
+        <h2 class="visually-hidden">Навигация по сайту</h2>
+        <ul class="site-nav-list">
+          <li class="site-nav-item site-nav-item-active">
+            <a href="blank.html">1</a>
+          </li>
+          <li class="site-nav-item">
+            <a href="blank.html">2</a>
+          </li>
+          <li class="site-nav-item">
+            <a href="blank.html">3</a>
+          </li>
+          <li class="site-nav-item">
+            <a href="blank.html">Следующая</a>
+          </li>
+        </ul>
+      </section>
     </section>
-    <section>
+    <section class="perforator-description">
       <h2>Пара слов о перфораторах</h2>
       <p>Перфоратор — универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче,
         бетоне и камне.<br>
