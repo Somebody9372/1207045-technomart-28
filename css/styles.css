@@ -34,8 +34,7 @@ body {
   padding: 0;
   padding-left: 10px;
   padding-right: 10px;
-  /* Тут пожно было использовать min-width: 960px,
-  но решил попробовать так */
+
   background-color: var(--white);
 }
 
@@ -70,6 +69,16 @@ img {
   background-color: var(--dark-red);
 }
 
+/* Tittle */
+
+.title {
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: var(--blue)
+}
+
 /* Header
 ======================= */
 .header-panel {
@@ -99,7 +108,6 @@ img {
 
 .button-green {
   font-size: 18px;
-  line-height: 24px;
   color: var(--white);
   background-color: var(--basic-green);
 }
@@ -114,7 +122,7 @@ img {
 .header-tel {
   font-size: 21px;
   line-height: 30px;
-  font-weight: bold;
+  font-weight: 700;
   color: var(--red)
 }
 
@@ -124,7 +132,8 @@ img {
   color: var(--blue)
 }
 
-.user-nav {
+.user-nav,
+.user-profile {
   list-style: none;
 }
 
@@ -195,7 +204,7 @@ img {
 ===================== */
 
 .promo-title {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 24px;
   line-height: 30px;
   color: var(--white);
@@ -205,6 +214,7 @@ img {
   font-size: 14px;
   line-height: 18px;
   color: var(--white);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .section-item {
@@ -212,16 +222,8 @@ img {
   height: 123px;
 }
 
-/* Тут не совсем понимаю.Что бы всё заработало,надо начинать
-с :nth-child(2),но по логике сначала идёт
-.section-item:first-child и т.д.
-Ещё не могу понять,почему не срабатывает смена цвета текста,
-ведь этот селектор спецефичней?
-и + section-slider почему-то наехал на section-item? */
-
 .section-item:nth-child(2) {
   background-color: var(--yellow-special);
-  color: blueviolet;
 }
 
 .section-item:nth-child(3) {
@@ -233,7 +235,7 @@ img {
 }
 
 .featues-slider-title {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 36px;
   line-height: 36px;
   color: var(--white)
@@ -255,33 +257,26 @@ img {
 /* Popular
 ========================= */
 
-.popular-title {
-  font-size: 30px;
-  line-height: 30px;
-  text-transform: uppercase;
-  color: var(--blue);
-}
-
 .popular-list {
   list-style: none;
 }
 
 .popular-item-title {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   line-height: 20px;
   color: var(--black)
 }
 
 .popular-item s{
-  font-weight: bold;
+  font-weight: 700;
   font-size: 17px;
   line-height: 18px;
   color: var(--grey-del);
 }
 
 .popular-item span {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 17px;
   line-height: 38px;
   text-align: center;
@@ -298,13 +293,6 @@ img {
 
 .manufacturer-list {
   list-style: none;
-}
-
-.manufacturer-title {
-  font-size: 30px;
-  line-height: 30px;
-  text-transform: uppercase;
-  color: var(--blue);
 }
 
  /* Servises
@@ -327,9 +315,6 @@ img {
 }
 
 .services-title {
-  font-size: 30px;
-  line-height: 30px;
-  text-transform: uppercase;
   color: var(--black);
 }
 
@@ -338,7 +323,7 @@ img {
 }
 
 .services-link {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 21px;
   line-height: 30px;
   color: var(--white);
@@ -366,8 +351,7 @@ img {
 ============================ */
 
 .about-title {
-  font-size: 30px;
-  line-height: 30px;
+  color: var(--black);
 }
 
 .about-text {
@@ -383,8 +367,7 @@ img {
 ==================== */
 
 .contacts-title {
-  font-size: 30px;
-  line-height: 30px;
+  color: var(--black);
 }
 
 .contacts-text {
@@ -444,14 +427,6 @@ img {
   color: var(--black);
 }
 
-/* h1 */
-
-.main h1 {
-  font-size: 30px;
-  line-height: 30px;
-  text-transform: uppercase;
-  color: var(--blue);
-}
 
 /* Filters
 =================== */
@@ -490,33 +465,26 @@ input::-webkit-inner-spin-button {
 /* Sorting
 ====================== */
 
-.sorting h3 {
+.sorting {
   font-family: "PT Sans",Arial,sans-serif;
-  font-weight: normal;
   font-size: 13px;
   line-height: 18px;
   text-transform: uppercase;
-  color: var(--black);
 }
 
-/* Можно ли было здесь зделать то же самое,но не
-дублируя код? */
-.sotring-link:not(.sotring-link-active) {
-  font-family: "PT Sans",Arial,sans-serif;
+.sorting h3 {
+  font-weight: normal;
   font-size: 13px;
-  line-height: 18px;
-  text-transform: uppercase;
+}
+
+
+.sotring-link:not(.sotring-link-active) {
   color: var(--black);
   opacity: 0.3;
   border-bottom: 1px dashed var(--black);
-
 }
 
 .sotring-link-active {
-  font-family: "PT Sans",Arial,sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-  text-transform: uppercase;
   color: var(--red);
 }
 
@@ -543,7 +511,7 @@ input::-webkit-inner-spin-button {
 }
 
 .products-item h3 {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   line-height: 20px;
   color: var(--black);
@@ -582,15 +550,12 @@ input::-webkit-inner-spin-button {
 /* Perforator-description
 ==================== */
 
-.perforator-description h2 {
-  font-size: 30px;
-  line-height: 30px;
-  text-transform: uppercase;
+.perforator-description-title {
+  color: var(--black);
 }
 
 .perforator-description p {
 font-size: 13px;
-line-height: 24px;
 }
 
 /* Footer
@@ -685,15 +650,11 @@ line-height: 24px;
 }
 
 
-/* По окончанию задания возникло ещё пара вопросов.
- Стоит-ли использовать так сказать относительно глобальные стили?
- т.е. если например я вижу что в шапке весь текст белый,могу ли я задать color:#fff; сразу для всеей шапки,
- или всё таки лучше каждому конкретному тегу?
-То-же самое по заголовкам,почти все имеют одинаковые стили,тогда можеть быть лучше задать всем им допольнительно
- class="title", и все стили задать именно ему?
- И ещё,мне показалось что я пишу стили как-то топортно,что ли. Т.е. мало использую доп.классы,а вместо этого просто
- меняю класс и польностью переписываю под него стили,мало использую псевдоклассы типа :first-of-type и т.п.
- Каково твоё мнение?
- Заранее спасибо за ответы!
+/* Ещё раз спаисбо за ответы,всё понятно!
 
-  */
+Я понимаю,что забегаю вперёд,но всё таки)
+я совсем немного интересовался БЭМ,и я правильно понимаю что на 2м
+уровне нас будут немного переучивать,ну в том плане что если задать
+стили блоку,а потом вытащить элемент из этого блока и поставить в другой,
+то он потеряет стили?Или пока выкинуть это из головы?)
+ */
