@@ -1,11 +1,14 @@
 
 :root {
+
   --black: #000000;
   --white: #ffffff;
   --beige: #F7F3EC;
+  --white-background: #F4F7F9;
   --red-basic: red;
   --red: #EE3643;
   --dark-red: #BA2732;
+  --dark-red-shadow: #8A1F27;
   --blue-special: #3BBCE3;
   --blue: #32425C;
   --dark-blue: #161D29;
@@ -29,14 +32,8 @@ body {
   line-height: 24px;
   color: var(--black);
 
-  max-width: 940px;
   margin: 0;
   padding: 0;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: 0 auto;
-
-  background-color: var(--white);
 }
 
 a {
@@ -80,18 +77,50 @@ img {
   color: var(--blue);
 }
 
-/* Header
-======================= */
-.header-panel {
-  background-color: var(--blue);
+/* Container */
 
-  display: flex;
+.container {
+  width: 940px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 auto;
 }
 
+/* Header
+======================= */
+.header {
+  margin-bottom: 119px;
+}
+
+/* Ограничивать по высоте - такое себе,
+но по-другому всё ломается */
+.header-wrapper {
+  background-color: var(--blue);
+  width: 100%;
+  height: 42px;
+}
+
+.header-wrapper-color {
+  background-color: var(--white-background);
+  padding-bottom: 60px;
+}
+
+
+.header-panel {
+  background-color: var(--blue);
+  margin-bottom: 40px;
+  display: flex;
+  height: 42px;
+}
+
+
 .header-panel input {
+  line-height: 24px;
   color: var(--white);
   background-color: transparent;
   border: none;
+  margin: 10px 20px 10px 0;
+  padding: 0;
 }
 
 ::placeholder {
@@ -102,21 +131,35 @@ img {
    color:transparent;
 }
 
+.header-logo {
+  width: 108px;
+  height: 18px;
+  padding: 12px 56px 12px;
+  margin-right: 17px;
+  box-shadow: 0 5px 0 0 var(--dark-red-shadow);
+}
 
 .header-button {
   font-size: 18px;
   text-decoration: none;
-  color: var(--white)
+  color: var(--white);
+  padding: 10px 24px 10px 49px;
+}
+
+.button-bookmark{
+  margin-left: auto;
 }
 
 .button-green {
   font-size: 18px;
   color: var(--white);
   background-color: var(--basic-green);
+  padding: 10px 16px 10px 19px;
 }
 
 .header-middle {
   display: flex;
+  margin-bottom: 44px;
 }
 
 .header-text {
@@ -126,19 +169,44 @@ img {
   color: var(--red);
 
   margin: 0;
+  margin-right: 84px;
+  /* по макету тут mr:95px,но если его не уменьшить,
+  то текст переносится на след.строку.Отступом слева
+  тоже пришлось пожертвовать. */
 }
 
+/* Не уверен,что обёртка с флексом -лучшее решенее
+,но больше ничего в голову не пришло */
+.header-middle-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-right: 69px;
+}
+
+/* Инспектор кода показывает высоту контента 40px,
+хотя такого размера я нигде не указывал.Поэтому пока
+переназначил на 30px
+И ещё,если задавать размер паддингами,
+то последние две цифры переносятся на след.строку
+паддинги оставил для наглядности */
 .header-tel {
   font-size: 21px;
   line-height: 30px;
   font-weight: 700;
-  color: var(--red)
+  color: var(--red);
+
+  /* padding: 7px 45px 8px 74px; */
+  height: 30px;
+  width: 270px;
+  border: 3px solid var(--white);
+  text-align: center;
 }
 
-.header-address{
+.header-address {
   font-size: 14px;
   font-style: normal;
-  color: var(--blue)
+  color: var(--blue);
+  text-align: center;
 }
 
 .user-nav,
@@ -149,10 +217,23 @@ img {
   padding: 0;
 }
 
+.user-nav {
+  display: flex;
+}
+
 .user-nav-link {
   font-size: 21px;
   line-height: 21px;
   color: var(--black);
+  background-color: var(--white);
+
+  padding: 12px 24px;
+  display: block;
+}
+
+.user-nav-link:first-child {
+  margin-right: 10px;
+  padding: 12px 27px 12px 45px;
 }
 
 /* Header-effects */
@@ -190,19 +271,27 @@ img {
 
 .nav {
   background-color: var(--blue);
+  margin-bottom: 119px;
 }
+
 
 .nav-list {
   list-style: none;
 
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  width: 940px;
 }
 
 .nav-link {
-  color: var(--white)
+  color: var(--white);
+  /* padding: 16px 24px 20px 27px; */
+  display: block;
+  padding: 18px 25px;
 }
+
 
 /* Nav-effects */
 
@@ -223,6 +312,8 @@ img {
   font-size: 24px;
   line-height: 30px;
   color: var(--white);
+
+  margin: 0;
 }
 
 .promo-link {
@@ -253,11 +344,15 @@ img {
   font-weight: 700;
   font-size: 36px;
   line-height: 36px;
-  color: var(--white)
+  color: var(--white);
+
+  margin: 0;
 }
 
 .featues-slider-text {
-  color:var(--white)
+  color:var(--white);
+
+  margin: 0;
 }
 
 
@@ -367,6 +462,10 @@ img {
 .about-contacts-wrapper {
   display: flex;
   justify-content: space-between;
+  width: 940px;
+  padding: 0 10px;
+  margin: 70px auto 70px;
+
 }
 
 /* About
@@ -378,12 +477,14 @@ img {
 
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .about-title {
   color: var(--black);
 
   margin: 0;
+  margin-bottom: 25px;
 }
 
 .about-text {
@@ -393,11 +494,28 @@ img {
   margin: 0;
 }
 
+.about-text:first-of-type {
+  margin-bottom: 20px;
+}
+
 .about-list {
   list-style: none;
 
   margin: 0;
   padding: 0;
+}
+
+.about-item {
+  padding-left: 37px;
+  margin-bottom: 12px;
+}
+
+.about-item:last-child {
+  margin-bottom: 20px;
+}
+
+.about-button {
+  padding: 10px 40px;
 }
 
 /* Contacts
@@ -412,12 +530,22 @@ img {
   color: var(--black);
 
   margin: 0;
+  margin-bottom: 24px;
 }
 
 .contacts-text {
   font-family: "PT Sans",Arial,sans-serif;
 
   margin: 0;
+  margin-bottom: 32px;
+}
+
+.contacts-map {
+  margin-bottom: 25px;
+}
+
+.contacts-button {
+  padding: 10px 61px;
 }
 
 /* Catalog-page
@@ -646,6 +774,11 @@ font-size: 13px;
   justify-content: space-between;
 }
 
+.footer-logo {
+  padding: 20px 40px;
+  box-shadow: 0 5px 0 0 var(--dark-red-shadow);
+}
+
 .footer-address {
   font-style: normal;
   color: var(--white);
@@ -657,27 +790,47 @@ font-size: 13px;
 
   margin: 0;
   padding: 0;
+  display: flex;
 }
 
-.list-top-item a {
+.list-top-item a,
+.list-bottom-item a {
   list-style: none;
-  color: var(--white);
 
+
+  display:inline-block;
+  margin-top: 36px;
+  margin-right: 30px;
+  margin-bottom: 17px;
+  margin-left: 30px;;
+}
+
+.list-top-item a:last-child,
+.list-bottom-item a {
+  margin-right: 0px;
 }
 
 .footer-middle {
   display: flex;
   justify-content: space-between;
+  padding: 22px 0 54px 0;
+}
+
+.list-top-item a {
+  color: var(--white);
 }
 
 .list-bottom-item a {
-  list-style: none;
   color: var(--yellow)
 }
 
 .footer-contacts {
   background-color: var(--dark-blue);
 
+  padding: 35px 0;
+}
+
+.footer-contacts .container {
   display: flex;
   justify-content: space-between;
 }
@@ -703,6 +856,8 @@ font-size: 13px;
   color: var(--white);
 
   margin: 0;
+  margin-right: 51px;
+  margin-left: auto;
 }
 
 .footer-feedback a {
@@ -751,13 +906,3 @@ font-size: 13px;
 .footer-developer a:active {
   color: var(--dark-red);
 }
-
-
-/* Ещё раз спаисбо за ответы,всё понятно!
-
-Я понимаю,что забегаю вперёд,но всё таки)
-я совсем немного интересовался БЭМ,и я правильно понимаю что на 2м
-уровне нас будут немного переучивать,ну в том плане что если задать
-стили блоку,а потом вытащить элемент из этого блока и поставить в другой,
-то он потеряет стили?Или пока выкинуть это из головы?)
- */
