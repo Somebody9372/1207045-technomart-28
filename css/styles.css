@@ -36,6 +36,10 @@ body {
   padding: 0;
 }
 
+*, *::before, ::after {
+  box-sizing: border-box;
+}
+
 a {
   text-decoration: none;
 }
@@ -80,7 +84,7 @@ img {
 /* Container */
 
 .container {
-  width: 940px;
+  max-width: 940px;
   padding-left: 10px;
   padding-right: 10px;
   margin: 0 auto;
@@ -90,29 +94,24 @@ img {
 ======================= */
 .header {
   margin-bottom: 119px;
-}
-
-/* Ограничивать по высоте - такое себе,
-но по-другому всё ломается */
-.header-wrapper {
-  background-color: var(--blue);
-  width: 100%;
-  height: 42px;
-}
-
-.header-wrapper-color {
-  background-color: var(--white-background);
   padding-bottom: 60px;
+  background-color: var(--white-background);
 }
 
 
 .header-panel {
   background-color: var(--blue);
   margin-bottom: 40px;
-  display: flex;
-  height: 42px;
 }
 
+.header-container {
+  width: 940px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 auto;
+
+  display: flex;
+}
 
 .header-panel input {
   line-height: 24px;
@@ -131,11 +130,15 @@ img {
    color:transparent;
 }
 
-.header-logo {
-  width: 108px;
-  height: 18px;
+/* Появился вопрос.Почему стили лучше задать не картинке а ссылке?
+Потому что ссылка-родитель?)
+Или например если ссылка в li,то тогда лучше задать родителю,или всё же
+самой ссылке? */
+
+.header-logo-link {
   padding: 12px 56px 12px;
   margin-right: 17px;
+  background-color: var(--red);
   box-shadow: 0 5px 0 0 var(--dark-red-shadow);
 }
 
@@ -143,7 +146,7 @@ img {
   font-size: 18px;
   text-decoration: none;
   color: var(--white);
-  padding: 10px 24px 10px 49px;
+  padding: 9px 17px;
 }
 
 .button-bookmark{
@@ -155,8 +158,8 @@ img {
   color: var(--white);
   background-color: var(--basic-green);
   padding: 10px 16px 10px 19px;
-}
 
+}
 .header-middle {
   display: flex;
   margin-bottom: 44px;
@@ -169,37 +172,26 @@ img {
   color: var(--red);
 
   margin: 0;
-  margin-right: 84px;
-  /* по макету тут mr:95px,но если его не уменьшить,
-  то текст переносится на след.строку.Отступом слева
-  тоже пришлось пожертвовать. */
+  margin-right: 93px;
+  width: 197px;
 }
 
-/* Не уверен,что обёртка с флексом -лучшее решенее
-,но больше ничего в голову не пришло */
+
 .header-middle-wrapper {
-  display: flex;
-  flex-direction: column;
   margin-right: 69px;
 }
 
-/* Инспектор кода показывает высоту контента 40px,
-хотя такого размера я нигде не указывал.Поэтому пока
-переназначил на 30px
-И ещё,если задавать размер паддингами,
-то последние две цифры переносятся на след.строку
-паддинги оставил для наглядности */
+
 .header-tel {
   font-size: 21px;
   line-height: 30px;
   font-weight: 700;
   color: var(--red);
-
-  /* padding: 7px 45px 8px 74px; */
-  height: 30px;
-  width: 270px;
   border: 3px solid var(--white);
-  text-align: center;
+
+  display: block;
+  padding: 8px 45px;
+  margin-bottom: 3px;
 }
 
 .header-address {
@@ -210,13 +202,13 @@ img {
 }
 
 .user-nav,
-.user-profile {
+.user-profile-list {
   list-style: none;
 
   margin: 0;
   padding: 0;
 }
-
+/* и всё таки без флекса не осилил :( */
 .user-nav {
   display: flex;
 }
@@ -231,7 +223,7 @@ img {
   display: block;
 }
 
-.user-nav-link:first-child {
+.user-nav-login {
   margin-right: 10px;
   padding: 12px 27px 12px 45px;
 }
@@ -271,7 +263,6 @@ img {
 
 .nav {
   background-color: var(--blue);
-  margin-bottom: 119px;
 }
 
 
@@ -282,16 +273,20 @@ img {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
-  width: 940px;
 }
 
 .nav-link {
   color: var(--white);
-  /* padding: 16px 24px 20px 27px; */
   display: block;
   padding: 18px 25px;
+  margin: 0 auto;
 }
 
+/* 52px - по макету,в дальнейшем,видимо нужно будет
+подгонять паддинки для каждого .nav-link,что бы попадать в размеры */
+.nav-list:first-child {
+  margin-left: 52px;
+}
 
 /* Nav-effects */
 
@@ -551,9 +546,11 @@ img {
 /* Catalog-page
 ===================== */
 
+
+
 /*Catalog-page header
 =================== */
-.header-basket {
+.button-basket {
   font-size: 18px;
   text-decoration: none;
   color: var(--white);
@@ -565,6 +562,15 @@ img {
   font-size: 21px;
   line-height: 21px;
   color: var(--black);
+  background-color: var(--white);
+
+  display: block;
+  padding: 12px 56px;
+  margin-bottom: 7px;
+}
+
+.user-profile-list {
+  display: flex;
 }
 
 .user-profile-link {
@@ -573,7 +579,15 @@ img {
   color: var(--blue);
 }
 
+/* Тут пытался с помощью псевдокалсса,
+но что-то опять полшло не так.
+ .user-profile-link:first-of-type {
+  margin-right: 10px;
+} */
 
+.user-profile-link-orders {
+  margin-right: 10px;
+}
 
 /*Catalog-page header-effects
 ============================= */
@@ -590,12 +604,9 @@ img {
 /* Bread crumbs
 =========================== */
 
-.bread-crumbs {
-  display: flex;
-}
-
 .bread-crumbs-list {
   list-style: none;
+  display: flex;
 }
 
 .bread-crumbs-list-item,
@@ -605,13 +616,38 @@ img {
   color: var(--black);
 }
 
+.bread-crumbs-list-item {
+  margin-left: 41px;
+}
+
+/* main-title */
+
+.main-title {
+  background-color: var(--white-background);
+  padding: 10px 0 10px 30px;
+  /* margin: 0; */
+}
+
+/* Wrapper
+===================*/
+
+.wrapper {
+  display:flex;
+}
+
 
 /* Filters
 =================== */
 
 .filters {
+  margin: 0;
+  padding: 0;
+
   width: 220px;
   height: 720px;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .filters h2 {
@@ -654,11 +690,14 @@ input::-webkit-inner-spin-button {
   font-size: 13px;
   line-height: 18px;
   text-transform: uppercase;
+
+  display: flex;
 }
 
 .sorting h3 {
   font-weight: normal;
   font-size: 13px;
+  margin-right: auto;
 }
 
 
@@ -752,6 +791,14 @@ input::-webkit-inner-spin-button {
   background-color: var(--red);
 }
 
+.site-nav-list {
+  list-style: none;
+}
+
+.site-nav-item {
+  display: inline-block;
+}
+
 /* Perforator-description
 ==================== */
 
@@ -774,8 +821,9 @@ font-size: 13px;
   justify-content: space-between;
 }
 
-.footer-logo {
-  padding: 20px 40px;
+.footer-logo-link {
+  padding: 23px 41px;
+  background-color: var(--red);
   box-shadow: 0 5px 0 0 var(--dark-red-shadow);
 }
 
