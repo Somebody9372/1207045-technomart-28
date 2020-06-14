@@ -15,6 +15,7 @@
   --yellow: #FFDA96;
   --yellow-special: #FFBF47;
   --yellow-light: #FFC047;
+  --yellow-background: #F9F5F0;
   --basic-green: #63A63E;
   --green-success: #5FBB2D;
   --green-light: #8ED78F;
@@ -65,6 +66,7 @@ img {
   line-height: 18px;
   background-color: var(--red);
   color: var(--white);
+  text-transform: uppercase;
 }
 
 .button-red:active {
@@ -84,7 +86,7 @@ img {
 /* Container */
 
 .container {
-  max-width: 940px;
+  max-width: 960px;
   padding-left: 10px;
   padding-right: 10px;
   margin: 0 auto;
@@ -129,11 +131,6 @@ img {
 .header-panel input:focus::placeholder {
    color:transparent;
 }
-
-/* Появился вопрос.Почему стили лучше задать не картинке а ссылке?
-Потому что ссылка-родитель?)
-Или например если ссылка в li,то тогда лучше задать родителю,или всё же
-самой ссылке? */
 
 .header-logo-link {
   padding: 12px 56px 12px;
@@ -208,7 +205,7 @@ img {
   margin: 0;
   padding: 0;
 }
-/* и всё таки без флекса не осилил :( */
+
 .user-nav {
   display: flex;
 }
@@ -263,6 +260,8 @@ img {
 
 .nav {
   background-color: var(--blue);
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -282,12 +281,6 @@ img {
   margin: 0 auto;
 }
 
-/* 52px - по макету,в дальнейшем,видимо нужно будет
-подгонять паддинки для каждого .nav-link,что бы попадать в размеры */
-.nav-list:first-child {
-  margin-left: 52px;
-}
-
 /* Nav-effects */
 
 .nav-link:hover {
@@ -302,6 +295,34 @@ img {
 /* promo
 ===================== */
 
+/* Мне кажется что сдесь - идеальное место для гридов
+Но,когда я начал в них разбираться,я понял что увязну в них,
+поэтому решил пока потренировать флексы,а потом в зависимости
+от оставшегося времени сделать на гридах или сдесь,или где-нибудь
+просто для галочки,если времени мало останеться,а то я уже чувствую
+что время поджимает)
+И ещё.Мне кажется здесь можно было сделать с меньшим колчиеством обёрток,
+но вот как? :)
+ */
+
+.promo-section {
+  margin-bottom: 59px;
+}
+
+.promo-top {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.promo-bottom {
+  display: flex;
+}
+
+.promo-bottom-right {
+  display: flex;
+  flex-direction: column;
+}
+
 .promo-title {
   font-weight: 700;
   font-size: 24px;
@@ -309,6 +330,7 @@ img {
   color: var(--white);
 
   margin: 0;
+  padding-bottom: 14px;
 }
 
 .promo-link {
@@ -316,61 +338,148 @@ img {
   line-height: 18px;
   color: var(--white);
   background-color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  text-align: center;
+
+  display: block;
+  width: 138px;
+  height: 35px;
+  padding-top: 9px;
 }
 
-.section-item {
+.promo-item {
   width: 300px;
   height: 123px;
+  padding-top: 20px;
+  padding-left: 23px;
 }
 
-.section-item:nth-child(2) {
+.promo-top {
+  margin-bottom: 20px;
+}
+
+.promo-top .promo-item:not(:first-of-type) {
+  margin-left: 20px;
+}
+
+.promo-top .promo-item:first-of-type {
   background-color: var(--yellow-special);
 }
 
-.section-item:nth-child(3) {
+.promo-top .promo-item:nth-of-type(2) {
   background-color: var(--blue-special);
 }
 
-.section-item:nth-child(4) {
+.promo-top .promo-item:nth-of-type(3) {
   background-color: var(--lilac-special);
 }
 
-.featues-slider-title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 36px;
-  color: var(--white);
 
-  margin: 0;
+.promo-bottom-right {
+  margin-left: 20px;
 }
 
-.featues-slider-text {
-  color:var(--white);
-
-  margin: 0;
-}
-
-
-.section-item:nth-child(6) {
+.promo-bottom-right .promo-item:first-of-type {
   background-color: var(--green-light);
+  margin-bottom: 20px;
 }
 
-.section-item:nth-child(7) {
+.promo-bottom-right .promo-item:nth-of-type(2) {
   background-color: var(--yellow-light);
 }
 
+/* Slider */
+.promo-slider{
+  width: 620px;
+  height: 266px;
+  position: relative;
+}
+
+/* Похоже на то,что у картинки полупрозрачная
+полоса задёться стилями,а я извлёк картинку сразу с
+полосой.Если это так,то стоит переделывать? */
+.promo-slider-img {
+  width: 100%;
+  height: 100%;
+}
+
+.slider-content {
+  position: absolute;
+  top: 23px;
+  left: 24px;
+}
+
+.promo-slider-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: var(--white);
+
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.promo-slider-text {
+  color:var(--white);
+
+  margin: 0;
+  padding-bottom: 113px;
+}
+
+.promo-slider-button {
+  padding: 10px 46px;
+}
 /* Popular
 ========================= */
 
+.popular {
+  margin-bottom: 70px;
+}
+
+.popular-wrapper {
+  background-color: var(--yellow-background);
+
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding-left: 28px;
+  padding-right: 14px;
+}
+
+.popular-title {
+  margin: 0;
+  padding: 30px 0;
+}
+
+.popular-button {
+  padding: 10px 24px;
+  display: block;
+}
+
 .popular-list {
   list-style: none;
+
+  display: flex;
+}
+/* Тут пока не критично,оставлю на потом :) */
+.popular-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.popular-item:not(:last-of-type) {
+  margin-right: 20px;
 }
 
 .popular-item-title {
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
-  color: var(--black)
+  color: var(--black);
+
+  margin: 0;
 }
 
 .popular-item s{
@@ -378,6 +487,9 @@ img {
   font-size: 17px;
   line-height: 18px;
   color: var(--grey-del);
+
+  display: block;
+
 }
 
 .popular-item span {
@@ -396,35 +508,93 @@ img {
 /* Manufacturer
  ============================*/
 
+.manufacturer {
+  margin-bottom: 50px;
+}
+
+.manufacturer-wrapper {
+  background-color: var(--yellow-background);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 28px;
+  padding-right: 19px;
+  margin-bottom: 20px;
+
+}
+
+.manufacturer-button {
+  padding: 9px 38px;
+}
+
 .manufacturer-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Наверное тут есть варианты по-лучше,кроме разбивания
+на две обёртки,но загвоздка в margin-right у последнего правого
+элемента.Если задать :nth-of-type(),и количество карточек поменяется,
+то всё сломается. */
+.manufacturer-list-top,
+.manufacturer-list-bottom{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.manufacturer-list-top .manufacturer-item:last-of-type,
+.manufacturer-list-bottom .manufacturer-item:last-of-type{
+  margin-right: 0;
+  margin-bottom: 20px;
+}
+
+/* Насколько принципиальна здесь
+фиксированная ширина и высота?
+Просто в другом случае я так понимаю каждому
+элементу отдельно придёться задавать свои паддинги? */
+.manufacturer-item {
+  border: 1px solid #EAEAEA;
+
+  width: 220px;
+  height: 145px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
 }
 
  /* Servises
  =========================== */
 
-.services-description:first-of-type {
-  background-image: url(../img/service-deliver.png);
-  background-repeat: no-repeat;
-  background-size: 468px 261px;
+.services {
+  background-color: var(--white-background);
+
+  padding: 64px 131px 99px 130px;
 }
 
-.services-description:nth-of-type(2) {
-  background-image: url(../img/service-garant.png);
-  background-repeat: no-repeat;
-}
-
-.services-description:nth-of-type(3) {
-  background-image: url(../img/service-credit.png);
-  background-repeat: no-repeat;
-}
 
 .services-title {
   color: var(--black);
+  margin-bottom: 25px;
+}
+
+.services-text {
+  margin-bottom: 70px;
+}
+
+.services-wrapper {
+  display: flex;
 }
 
 .services-list{
    list-style: none;
+   margin-right: 80px;
 }
 
 .services-link {
@@ -451,6 +621,23 @@ img {
   font-size: 13px;
   color: var(--black);
 }
+
+.services-description:first-of-type {
+  background-image: url(../img/service-deliver.png);
+  background-repeat: no-repeat;
+  background-size: 468px 261px;
+}
+
+.services-description:nth-of-type(2) {
+  background-image: url(../img/service-garant.png);
+  background-repeat: no-repeat;
+}
+
+.services-description:nth-of-type(3) {
+  background-image: url(../img/service-credit.png);
+  background-repeat: no-repeat;
+}
+
 
 /* Wrapper */
 
@@ -793,14 +980,17 @@ input::-webkit-inner-spin-button {
 
 .site-nav-list {
   list-style: none;
-}
-
-.site-nav-item {
-  display: inline-block;
+  display: flex;
 }
 
 /* Perforator-description
 ==================== */
+
+.perforator-description {
+  background-color: var(--white-background);
+
+  padding: 64px 0 68px;
+}
 
 .perforator-description-title {
   color: var(--black);
