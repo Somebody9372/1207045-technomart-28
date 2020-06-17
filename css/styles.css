@@ -619,10 +619,10 @@ img {
   margin: 0;
 }
 
+/* Нужно ли фоновому изображению задавать конкретный размер? */
 .delevery-description {
-  background-image: url(../img/delevery.svg);
-  /* background-position: 50 50; */
-  background-size: 468px 261px;
+  background-image: url(../img/service-deliver.png);
+  /* background-size: 468px 261px; */
 }
 
 .garanty-description {
