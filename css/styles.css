@@ -215,6 +215,7 @@ img {
   color: var(--red);
 
   margin: 0;
+  margin-left: 40px;
   margin-right: 93px;
   width: 197px;
 }
@@ -235,8 +236,9 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px 45px;
+  padding: 8px 35px;
   margin-bottom: 3px;
+  min-width: 270px;
 }
 
 .header-tel::before {
@@ -831,10 +833,7 @@ img {
 .user-profile{
  display: flex;
  justify-content: center;
- align-items: center;
  flex-wrap: wrap;
-
- position: relative;
 
 }
 
@@ -846,7 +845,11 @@ img {
   background-color: var(--white);
 
 
-  padding: 12px 10px 12px 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10px;
   margin-bottom: 7px;
 
   position: relative;
@@ -854,7 +857,7 @@ img {
 
 .user-name-icon {
   fill: var(--grey);
-  margin-right: 21px;
+  margin-right: 11px;
 }
 
 .user-name-exit-icon {
@@ -874,7 +877,7 @@ img {
 
 
 .user-profile-link-orders {
-  margin-right: 16px;
+  margin-right: 15px;
   position: relative;
 }
 
