@@ -80,7 +80,7 @@ img {
 
 .button-red:hover,
 .button-red:focus {
-  background-color: var(-red);
+  background-color: var(--red);
 }
 
 .button-red:active {
@@ -100,9 +100,9 @@ img {
 /* Container */
 
 .container {
-  max-width: 960px;
-  padding-left: 10px;
-  padding-right: 10px;
+  width: 940px;
+  /* padding-left: 10px;
+  padding-right: 10px; */
   margin: 0 auto;
 }
 
@@ -122,11 +122,12 @@ img {
 
 .header-container {
   width: 940px;
-  padding-left: 10px;
-  padding-right: 10px;
+  /* padding-left: 10px;
+  padding-right: 10px; */
   margin: 0 auto;
 
   display: flex;
+  /* align-items: center; */
 }
 
 .header-panel input {
@@ -134,9 +135,8 @@ img {
   color: var(--white);
   background-color: transparent;
   border: none;
-  margin: 10px 20px 10px 0;
-  padding: 0;
-  position: relative;
+  padding: 7px 20px 10px 27px;
+  /* padding: 0; */
 }
 
 ::placeholder {
@@ -150,30 +150,40 @@ img {
 .header-search-icon {
   width: 17px;
   height: 17px;
-  display: block;
-  margin-top: 12px;
-  margin-right: 8px;
+  display: inline-block;
 
   fill: var(--white);
   opacity: 0.3;
+
+  position: absolute;
+  top: 10px;
+  left: 442px;
+  z-index: 1;
+}
+
+.header-logo{
+  display: block;
+  width: 220px;
+  height: 40px;
+  padding: 10px 56px 8px 56px;
+
+  background-color: var(--red);
+  box-shadow: 0 5px 0 0 var(--dark-red-shadow);
 }
 
 .header-logo-link {
-  padding: 12px 56px 12px;
   margin-right: 17px;
-  background-color: var(--red);
-  box-shadow: 0 5px 0 0 var(--dark-red-shadow);
 }
 
 .header-button {
   font-size: 18px;
   text-decoration: none;
   color: var(--white);
-  padding: 8px 17px;
+  padding: 8px 20px;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
 }
 
 .button-bookmark{
@@ -188,6 +198,7 @@ img {
   width: 14px;
   height: 16px;
   margin-right: 9px;
+  margin-top: 2px;
 }
 
 .button-basket::before {
@@ -312,8 +323,10 @@ img {
 
 }
 
-.header-search-icon:hover {
+.header-search-icon + .header-panel input:hover{
   opacity: 1;
+  fill: red;
+  background-color: red;
 }
 
 .header-panel input:focus {
@@ -574,7 +587,7 @@ img {
 }
 
 .popular-item:last-of-type {
-  margin-right: 0px;
+  margin-right: 0;
 }
 
 .popular-item:last-of-type h3 {
@@ -586,7 +599,7 @@ img {
 }
 
 .popular-item img {
- padding: 10px 10px 10px 10px;
+ padding: 10px;
   margin: 0 auto;
   display: block;
 }
@@ -731,8 +744,7 @@ img {
    background-color: var(--blue);
 }
 
-.services-link,
-.services-link-active {
+.services-link {
   font-weight: 700;
   font-size: 21px;
   line-height: 30px;
@@ -897,7 +909,7 @@ img {
 
 .user-profile{
  display: flex;
- justify-content: flex-end;
+ justify-content: center;
  flex-wrap: wrap;
  width: 299px;
 
@@ -933,6 +945,7 @@ img {
 
 .user-profile-list {
   display: flex;
+  justify-content: flex-start;
 }
 
 .user-profile-link {
@@ -1163,8 +1176,8 @@ input::-webkit-inner-spin-button {
 }
 
 /* Фокус с клавиатуры почему-то не срабатывает */
-.button-down .sorting-button-down-img:hover,
-.button-down .sorting-button-down-img:focus {
+.button-down:hover,
+.button-down:focus {
   fill: var(--black);
 }
 
@@ -1502,18 +1515,17 @@ font-size: 13px;
 /* Popups */
 
 .map-popup {
+  display: none;
   width: 943px;
   height: 449px;
-  margin: 0 auto;
 
   position: fixed;
   z-index: 1;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
-
-
-}
+  margin-left: -471.5px;
+  margin-top: -224.5px;
+ }
 
 .basket-popup {
   /* display: none; */
@@ -1534,7 +1546,7 @@ font-size: 13px;
   border: none;
 
   background-image: url(../img/icon-close.png);
-  background-size: 20px 20px;
+  background-size: 20px;
   background-color: transparent;
 
   width: 20px;
