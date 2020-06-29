@@ -130,12 +130,19 @@ img {
   /* align-items: center; */
 }
 
+.input-search-form {
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+}
+
 .header-panel input {
   line-height: 24px;
   color: var(--white);
   background-color: transparent;
   border: none;
-  padding: 7px 20px 10px 27px;
+  padding: 7px 20px 10px 42px;
+  width: 100%;
   /* padding: 0; */
 }
 
@@ -157,33 +164,44 @@ img {
 
   position: absolute;
   top: 10px;
-  left: 442px;
+  left: 17px;
   z-index: 1;
 }
 
 .header-logo{
-  display: block;
-  width: 220px;
-  height: 40px;
-  padding: 10px 56px 8px 56px;
 
-  background-color: var(--red);
-  box-shadow: 0 5px 0 0 var(--dark-red-shadow);
+  /* padding: 10px 56px 8px 56px; */
 }
 
 .header-logo-link {
-  margin-right: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 40px;
+
+  background-color: var(--red);
+  box-shadow: 0 5px 0 0 var(--dark-red-shadow);
 }
 
 .header-button {
   font-size: 18px;
   text-decoration: none;
   color: var(--white);
-  padding: 8px 20px;
+  padding: 8px 26px;
 
   display: flex;
   /* justify-content: center;
   align-items: center; */
+}
+
+
+.button-green {
+  font-size: 18px;
+  color: var(--white);
+  background-color: var(--basic-green);
+  padding: 8px 16px 8px 17px;
+
 }
 
 .button-bookmark{
@@ -211,16 +229,9 @@ img {
   margin-right: 8px;
 }
 
-.button-green {
-  font-size: 18px;
-  color: var(--white);
-  background-color: var(--basic-green);
-  padding: 10px 16px 10px 19px;
-
-}
 .header-middle {
   display: flex;
-  margin-bottom: 44px;
+  margin-bottom: 40px;
 }
 
 .header-text {
@@ -230,14 +241,15 @@ img {
   color: var(--red);
 
   margin: 0;
-  margin-left: 40px;
-  margin-right: 93px;
-  width: 197px;
+  padding-left: 31px;
+  padding-top: 2px;
+  margin-right: 20px;
+  width: 300px;
 }
 
 
 .header-middle-wrapper {
-  margin-right: 69px;
+  margin-right: 20px;
 }
 
 
@@ -250,10 +262,11 @@ img {
 
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 8px 35px;
+  /* align-items: center; */
+  padding: 8px 8px 5px 5px;
   margin-bottom: 3px;
   min-width: 270px;
+
 }
 
 .header-tel::before {
@@ -261,7 +274,8 @@ img {
   width: 19px;
   height: 19px;
 
-  margin-right: 17px;
+  margin-right: 15px;
+  margin-top: 7px;
 
   background-image: url(../img/icon-header-phone.svg);
 }
@@ -270,17 +284,21 @@ img {
   font-size: 14px;
   font-style: normal;
   color: var(--blue);
-  text-align: center;
+  margin-left: 11px;
 }
 
 .user-nav {
   list-style: none;
-
   margin: 0;
   padding: 0;
 
-  width: 299px;
-  padding-left: 18px;
+  display: flex;
+  justify-content: flex-end;
+  width: 300px;
+  margin-top: 5px;
+
+  margin-left: auto;
+
 }
 
 .user-profile-list {
@@ -288,11 +306,10 @@ img {
 
   margin: 0;
   padding: 0;
+
+
 }
 
-.user-nav {
-  display: flex;
-}
 
 .user-nav-link {
   font-size: 21px;
@@ -300,15 +317,15 @@ img {
   color: var(--black);
   background-color: var(--white);
 
-  padding: 12px 24px;
-  display: block;
+  padding: 12px 24px 12px 25px;
+  display: flex;
 }
 
 .user-nav-login {
   display: flex;
   align-items: center;
   margin-right: 10px;
-  padding: 12px 27px 12px 19px;
+  /* padding: 12px 27px 12px 19px; */
 }
 
 .user-nav-login-icon {
@@ -318,7 +335,7 @@ img {
 
 /* Header-effects */
 
-.header-logo:active {
+.header-logo-link:active {
   background-color: var(--dark-red);
 
 }
@@ -387,7 +404,7 @@ img {
 .nav-link {
   color: var(--white);
   display: block;
-  padding: 18px 25px;
+  padding: 18px 28px 18px 29px;
   margin: 0 auto;
 }
 
@@ -421,7 +438,7 @@ img {
   padding-left: 23px;
 
   background-repeat: no-repeat;
-  background-position: 213px 31px;
+  background-position: right 30px top 50%;
 }
 
 .promo-item-new {
@@ -443,6 +460,7 @@ img {
 .promo-item-yellow {
   background-color: var(--yellow-special);
   background-image: url(../img/promo-materials.svg);
+  background-position: right 44px top 50%;
 }
 
 .promo-item-blue {
@@ -458,6 +476,7 @@ img {
 .promo-item-green {
   background-color: var(--green-light);
   background-image: url(../img/promo-sells.svg);
+  background-position: right 44px top 50%;
 }
 
 .promo-item-yellow-light {
@@ -809,7 +828,7 @@ img {
   justify-content: space-between;
   width: 940px;
   padding: 0 10px;
-  margin: 70px auto 70px;
+  margin: 70px auto 83px;
 
 }
 
@@ -900,18 +919,23 @@ img {
 
 /*Catalog-page header
 =================== */
+
+
 .button-basket-active {
   font-size: 18px;
   text-decoration: none;
   color: var(--white);
   background-color: var(--red);
+  padding-left: 10px;
 }
 
 .user-profile{
  display: flex;
- justify-content: center;
+ justify-content: flex-end;
  flex-wrap: wrap;
- width: 299px;
+ width: 300px;
+ margin-top: 5px;
+ margin-left: auto;
 
 }
 
@@ -925,27 +949,30 @@ img {
 
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  padding: 0px 10px;
-  margin-bottom: 7px;
+  padding: 12px 10px;
+  margin-bottom: 5px;
+  margin-top: 1px;
 
   position: relative;
 }
 
 .user-name-icon {
   fill: var(--grey);
-  margin-right: 11px;
+  margin-right: 22px;
 }
 
 .user-name-exit-icon {
   fill: var(--grey);
+  margin-top: 3px;
+  margin-right: 6px;
 }
 
 
 .user-profile-list {
   display: flex;
-  justify-content: flex-start;
+  margin-right: 45px;
 }
 
 .user-profile-link {
@@ -956,7 +983,7 @@ img {
 
 
 .user-profile-link-orders {
-  margin-right: 15px;
+  margin-right: 31px;
   position: relative;
 }
 
@@ -967,10 +994,10 @@ img {
 
   background-color: var(--blue);
 
-  width: 6px;
-  height: 7px;
+  width: 5px;
+  height: 5px;
   top: 6px;
-  right: -11px;
+  right: -17px;
 
 }
 
@@ -981,7 +1008,6 @@ img {
   color: var(--red);
 }
 
-/* Active почему-то не срабатывает */
 .user-name:active,
 .user-profile-link:active {
   color: var(--grey);
@@ -1348,7 +1374,12 @@ font-size: 13px;
 }
 
 .footer-logo-link {
-  padding: 23px 41px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 63px;
+
   background-color: var(--red);
   box-shadow: 0 5px 0 0 var(--dark-red-shadow);
 }
@@ -1356,38 +1387,42 @@ font-size: 13px;
 .footer-address {
   font-style: normal;
   color: var(--white);
+  margin-top: 12px;
+  margin-left: 2px;
+
 }
 
-.footer-list-top,
-.footer-list-bottom {
+.footer-list {
   list-style: none;
 
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.footer-list-top {
+  margin-top: 20px;
 }
 
 .list-top-item a,
 .list-bottom-item a {
   list-style: none;
-
-
-  display:inline-block;
-  margin-top: 36px;
-  margin-right: 30px;
-  margin-bottom: 17px;
-  margin-left: 30px;;
+  display: block;
+  margin: 17px 59px;
 }
 
 .list-top-item a:last-child,
-.list-bottom-item a {
+.list-bottom-item a:last-child {
   margin-right: 0px;
+  padding-right: 0px;
 }
 
 .footer-middle {
   display: flex;
   justify-content: space-between;
-  padding: 22px 0 54px 0;
+  padding-bottom: 54px
 }
 
 .list-top-item a {
@@ -1451,6 +1486,7 @@ font-size: 13px;
   color: var(--white);
 
   margin: 0;
+  margin-right: 12px;
 }
 
 .footer-developer a {
@@ -1528,7 +1564,7 @@ font-size: 13px;
  }
 
 .basket-popup {
-  /* display: none; */
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1539,6 +1575,8 @@ font-size: 13px;
   position: relative;
 
   border-top: 7px solid var(--red);
+
+  display: none;
 }
 
 .button-close {
