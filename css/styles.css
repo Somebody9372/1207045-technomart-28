@@ -101,8 +101,6 @@ img {
 
 .container {
   width: 940px;
-  /* padding-left: 10px;
-  padding-right: 10px; */
   margin: 0 auto;
 }
 
@@ -122,8 +120,6 @@ img {
 
 .header-container {
   width: 940px;
-  /* padding-left: 10px;
-  padding-right: 10px; */
   margin: 0 auto;
 
   display: flex;
@@ -141,9 +137,9 @@ img {
   color: var(--white);
   background-color: transparent;
   border: none;
-  padding: 7px 20px 10px 42px;
+  /* padding: 7px 20px 10px 42px; */
+  padding: 5px 5px 5px 42px;
   width: 100%;
-  /* padding: 0; */
 }
 
 ::placeholder {
@@ -157,7 +153,6 @@ img {
 .header-search-icon {
   width: 17px;
   height: 17px;
-  display: inline-block;
 
   fill: var(--white);
   opacity: 0.3;
@@ -168,10 +163,6 @@ img {
   z-index: 1;
 }
 
-.header-logo{
-
-  /* padding: 10px 56px 8px 56px; */
-}
 
 .header-logo-link {
   display: flex;
@@ -215,7 +206,7 @@ img {
 
   width: 14px;
   height: 16px;
-  margin-right: 9px;
+  margin-right: 7px;
   margin-top: 2px;
 }
 
@@ -226,12 +217,13 @@ img {
 
   width: 15px;
   height: 15px;
-  margin-right: 8px;
+  margin-right: 10px;
+  margin-top: 2px;
 }
 
 .header-middle {
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 39px;
 }
 
 .header-text {
@@ -243,13 +235,17 @@ img {
   margin: 0;
   padding-left: 31px;
   padding-top: 2px;
-  margin-right: 20px;
+  margin-right: 21px;
   width: 300px;
 }
 
 
 .header-middle-wrapper {
   margin-right: 20px;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  margin-top: 5px;
 }
 
 
@@ -262,9 +258,11 @@ img {
 
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-  padding: 8px 8px 5px 5px;
+  align-items: center;
+  /* padding: 0px 5px 0px 15px; */
+  padding: 5px 10px 5px 5px;
   margin-bottom: 3px;
+
   min-width: 270px;
 
 }
@@ -275,7 +273,6 @@ img {
   height: 19px;
 
   margin-right: 15px;
-  margin-top: 7px;
 
   background-image: url(../img/icon-header-phone.svg);
 }
@@ -317,15 +314,16 @@ img {
   color: var(--black);
   background-color: var(--white);
 
-  padding: 12px 24px 12px 25px;
+  padding: 12px 24px 12px 23px;
   display: flex;
+
 }
 
 .user-nav-login {
   display: flex;
   align-items: center;
   margin-right: 10px;
-  /* padding: 12px 27px 12px 19px; */
+  padding: 12px 27px 12px 19px;
 }
 
 .user-nav-login-icon {
@@ -340,10 +338,13 @@ img {
 
 }
 
-.header-search-icon + .header-panel input:hover{
+.input-search-form:hover .header-search-icon {
   opacity: 1;
-  fill: red;
-  background-color: red;
+}
+
+.input-search:focus + .header-search-icon{
+  opacity: 1;
+  fill: var(--red);
 }
 
 .header-panel input:focus {
@@ -404,7 +405,7 @@ img {
 .nav-link {
   color: var(--white);
   display: block;
-  padding: 18px 28px 18px 29px;
+  padding: 17px 28px 18px 28px;
   margin: 0 auto;
 }
 
@@ -434,11 +435,11 @@ img {
 }
 
 .promo-item {
-  padding-top: 20px;
-  padding-left: 23px;
+  padding-top: 22px;
+  padding-left: 22px;
 
   background-repeat: no-repeat;
-  background-position: right 30px top 50%;
+
 }
 
 .promo-item-new {
@@ -460,28 +461,31 @@ img {
 .promo-item-yellow {
   background-color: var(--yellow-special);
   background-image: url(../img/promo-materials.svg);
-  background-position: right 44px top 50%;
+  background-position: right 43px top 55%;
 }
 
 .promo-item-blue {
   background-color: var(--blue-special);
   background-image: url(../img/promo-drill.svg);
+  background-position: right 31px top 56%;
 }
 
 .promo-item-lilac {
   background-color: var(--lilac-special);
   background-image: url(../img/promo-technics.svg);
+  background-position: right 31px top 53%;
 }
 
 .promo-item-green {
   background-color: var(--green-light);
   background-image: url(../img/promo-sells.svg);
-  background-position: right 44px top 50%;
+  background-position: right 45px top 52%;
 }
 
 .promo-item-yellow-light {
   background-color: var(--yellow-light);
   background-image: url(../img/promo-delivery.svg);
+  background-position: right 31px top 55%;
 }
 
 .promo-title {
@@ -503,8 +507,8 @@ img {
   text-align: center;
 
   display: block;
-  width: 138px;
-  height: 35px;
+  width: 135px;
+  height: 37px;
   padding-top: 9px;
 }
 
@@ -546,7 +550,7 @@ img {
   color: var(--white);
 
   margin: 0;
-  padding-bottom: 5px;
+  padding-bottom: 6px;
 }
 
 .promo-slider-text {
@@ -569,6 +573,8 @@ img {
   margin-bottom: 70px;
 }
 
+
+
 .popular-wrapper {
   background-color: var(--yellow-background);
 
@@ -577,11 +583,13 @@ img {
   align-items: center;
   padding-left: 28px;
   padding-right: 14px;
+  margin-bottom: 20px;
 }
 
 .popular-title {
   margin: 0;
   padding: 30px 0;
+
 }
 
 .popular-button {
@@ -591,18 +599,21 @@ img {
 
 .popular-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
 
   display: flex;
+  justify-content: space-between;
 }
 
 .popular-item {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   border: 1px solid #EAEAEA;
   width: 220px;
   height: 318px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .popular-item:last-of-type {
@@ -618,20 +629,23 @@ img {
 }
 
 .popular-item img {
- padding: 10px;
+  display: block;
   margin: 0 auto;
+
+  margin-top: 39px;
+  margin-bottom: 44px;
+
   display: block;
 }
 
 .popular-item-title {
+  font-family: PT Sans;
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
   color: var(--black);
 
-  margin: 0;
-  margin-bottom: 8px;
-  padding: 0 20px;
+  margin: 0 20px 8px 24px;
   text-align: center;
 
 }
@@ -643,24 +657,25 @@ img {
   color: var(--grey-del);
 
   display: block;
-  padding: 0 20px;
   margin-bottom: 13px;
   text-align: center;
 }
 
 .popular-item span {
+  font-family: PT Sans;
   font-weight: 700;
   font-size: 17px;
   line-height: 38px;
-  text-align: center;
+
   color: var(--white);
   background-image: url(../img/button-price.svg);
+
   display: block;
   width: 141px;
   height: 38px;
 
-  margin: 0 auto;
-
+  margin-left: 44px;
+  padding-left: 33px;
 }
 
 /* Manufacturer
@@ -678,12 +693,20 @@ img {
   align-items: center;
   padding-left: 28px;
   padding-right: 19px;
+  padding-top: 5px;
   margin-bottom: 20px;
 
 }
 
+.manufacturer-title {
+  margin: 0;
+  padding: 24px 0 30px 0;
+}
+
 .manufacturer-button {
-  padding: 9px 38px;
+  margin-top: -7px;
+  padding: 10px 38px 10px 39px;
+
 }
 
 .manufacturer-list {
@@ -729,6 +752,9 @@ img {
 }
 
 .services-text {
+  font-family: PT Sans;
+  font-size: 13px;
+
   margin: 0;
   margin-bottom: 70px;
 }
@@ -772,8 +798,8 @@ img {
 
   display: block;
   width: 240px;
-  height: 61px;
-  padding: 14px 130px 14px 22px;
+  height: 62px;
+  padding: 15px 130px 12px 22px;
 
 }
 
@@ -784,7 +810,7 @@ img {
 
 .services-description {
   background-repeat: no-repeat;
-  background-position: 100px 30px;
+  background-position: 152px 20px;
   width: 100%;
 }
 
@@ -795,11 +821,16 @@ img {
   color: var(--blue);
 
   margin: 0;
-  margin-bottom: 25px;
+  margin-bottom: 27px;
 }
 
 .services-description p {
+  font-family: PT Sans;
   font-size: 13px;
+  line-height: 25px;
+  /* В макете указанно 24px,по пп надо ставить 25px.
+  Однако по одному базовых критериев, line-height должна
+  соответствовать макету.Как быть?)) */
   color: var(--black);
 
   margin: 0;
@@ -827,8 +858,7 @@ img {
   display: flex;
   justify-content: space-between;
   width: 940px;
-  padding: 0 10px;
-  margin: 70px auto 83px;
+  margin: 70px auto 70px;
 
 }
 
@@ -859,7 +889,7 @@ img {
 }
 
 .about-text:first-of-type {
-  margin-bottom: 20px;
+  margin-bottom: 26px;
 }
 
 .about-list {
@@ -867,11 +897,28 @@ img {
 
   margin: 0;
   padding: 0;
+
+  margin-top: 1px;
 }
 
 .about-item {
+  position: relative;
+
   padding-left: 37px;
   margin-bottom: 12px;
+}
+
+.about-item::before {
+  content: "";
+  display: block;
+
+  width: 25px;
+  height: 2px;
+  background-color: var(--red);
+
+  position: absolute;
+  top: 50%;
+  left: 0;
 }
 
 .about-item:last-child {
@@ -899,6 +946,7 @@ img {
 
 .contacts-text {
   font-family: "PT Sans",Arial,sans-serif;
+  font-size: 13px;
 
   margin: 0;
   margin-bottom: 32px;
@@ -1403,7 +1451,7 @@ font-size: 13px;
 }
 
 .footer-list-top {
-  margin-top: 20px;
+  margin-top: 21px;
 }
 
 .list-top-item a,
@@ -1450,6 +1498,7 @@ font-size: 13px;
   color: var(--white);
 
   margin: 0;
+  margin-top: 2px;
 }
 
 .social-list {
@@ -1458,7 +1507,7 @@ font-size: 13px;
   padding: 0;
 
   display: flex;
-  margin-left: 161px;
+  margin-left: 162px;
 
 }
 
@@ -1473,7 +1522,8 @@ font-size: 13px;
 
   margin: 0;
   margin-right: 51px;
-  margin-left: auto;
+  margin-left: 115px;
+  margin-top: 2px;
 }
 
 .footer-feedback a {
@@ -1486,7 +1536,8 @@ font-size: 13px;
   color: var(--white);
 
   margin: 0;
-  margin-right: 12px;
+  margin-right: 13px;
+  margin-top: 2px;
 }
 
 .footer-developer a {
@@ -1552,15 +1603,15 @@ font-size: 13px;
 
 .map-popup {
   display: none;
-  width: 943px;
-  height: 449px;
+  width: 944px;
+  height: 450px;
 
   position: fixed;
   z-index: 1;
   left: 50%;
   top: 50%;
-  margin-left: -471.5px;
-  margin-top: -224.5px;
+  margin-left: -472px;
+  margin-top: -225px;
  }
 
 .basket-popup {
@@ -1650,4 +1701,78 @@ padding: 73px 0;
   padding: 10px 31px;
 
 
+}
+
+/* Catalog-item */
+
+.popular-item {
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  border: 1px solid #EAEAEA;
+  width: 220px;
+  height: 318px;
+  margin-right: 10px;
+}
+
+.popular-item:last-of-type {
+  margin-right: 0;
+}
+
+.popular-item:last-of-type h3 {
+  margin-bottom: 39px;
+}
+
+.popular-item-new {
+  position: relative;
+}
+
+.popular-item img {
+  display: block;
+  margin: 0 auto;
+
+  margin-top: 39px;
+  margin-bottom: 44px;
+
+  display: block;
+}
+
+.popular-item-title {
+  font-family: PT Sans;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: var(--black);
+
+  margin: 0 20px 8px 24px;
+  text-align: center;
+
+}
+
+.popular-item s {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 18px;
+  color: var(--grey-del);
+
+  display: block;
+  margin-bottom: 13px;
+  text-align: center;
+}
+
+.popular-item span {
+  font-family: PT Sans;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 38px;
+
+  color: var(--white);
+  background-image: url(../img/button-price.svg);
+
+  display: block;
+  width: 141px;
+  height: 38px;
+
+  margin-left: 44px;
+  padding-left: 33px;
 }
