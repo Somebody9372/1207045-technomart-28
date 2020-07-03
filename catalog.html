@@ -107,28 +107,25 @@
         <form class="filters-form" action="https://echo.htmlacademy.ru" method="get">
           <fieldset>
             <legend>Цена:</legend>
-            <div class="range-filters">
-              <div class="range-controls">
-                <div class="scale">
-                  <div class="bar">
-                    <button class="toggle toggle-min" type="button" aria-hidden="true">
-                      <span class="visually-hidden">Цена,от</span>
-                    </button>
-                    <button class="toggle toggle-max" type="button" aria-hidden="true">
-                      <span class="visually-hidden">Цена,до</span>
-                    </button>
-                  </div>
+            <div class="range-controls">
+              <div class="scale">
+                <div class="bar">
+                  <button class="toggle toggle-min" type="button" aria-hidden="true">
+                    <span class="visually-hidden">Цена,от</span>
+                  </button>
+                  <button class="toggle toggle-max" type="button" aria-hidden="true">
+                    <span class="visually-hidden">Цена,до</span>
+                  </button>
                 </div>
               </div>
-              <div class="input-wrapper">
-                <label for="price-min" class="visually-hidden">Цена,от</label>
-                <input type="number" name="price-min" id="price-min" step="1" value="0">
-                <label for="price-max" class="visually-hidden">Цена,до</label>
-                <input type="number" name="price-max" id="price-max" step="1" value="30000">
-              </div>
+            </div>
+            <div class="input-wrapper">
+              <label for="price-min" class="visually-hidden">Цена,от</label>
+              <input type="number" name="price-min" id="price-min" step="1" value="0">
+              <label for="price-max" class="visually-hidden">Цена,до</label>
+              <input type="number" name="price-max" id="price-max" step="1" value="30000">
             </div>
           </fieldset>
-
           <fieldset class="filters-checkbox">
             <legend>Производители:</legend>
             <ul class="filter-list filter-list-checkbox">
@@ -183,8 +180,8 @@
               </li>
               <li class="filter-item filter-radio">
                 <label>
-                  <input class="radio-input" type="radio" name="energy-type" value="mains-power"
-                    id="filter-mains-power">
+                  <input class="radio-input" type="radio" name="energy-type" value="mains-power" id="filter-mains-power"
+                    disabled>
                   <span class="filter-item-radio"></span>
                   Сетевые
                 </label>
@@ -287,7 +284,7 @@
                 <span class="catalog-new-price">25500 Р.</span>
               </a>
             </li>
-            <li class="products-item products-item-new products-item-no-discount catalog-item">
+            <li class="products-item products-item-new catalog-item">
               <a href="blank.html" class="catalog-link">
                 <img src="img/bosh-2000-3000.jpg" alt="Перфоратор BOSCH BFG 6000" width="186" height="164">
                 <h3 class="catalog-title">
@@ -319,7 +316,7 @@
                 <span class="catalog-new-price">25500 Р.</span>
               </a>
             </li>
-            <li class="products-item products-item-new products-item-no-discount catalog-item">
+            <li class="products-item products-item-new catalog-item">
               <a href="blank.html" class="catalog-link">
                 <img src="img/bosh-2000-3000.jpg" alt="Перфоратор BOSCH BFG 6000" width="186" height="164">
                 <h3 class="catalog-title">

@@ -32,6 +32,7 @@
   --icon-background: #3D546F;
   --popup-background: #F1F1F1;
   --scale-background: #D7DCDE;
+  --bar-background: #00CA74;
 }
 
 /* Global
@@ -138,7 +139,6 @@ img {
   color: var(--white);
   background-color: transparent;
   border: none;
-  /* padding: 7px 20px 10px 42px; */
   padding: 5px 5px 5px 42px;
   width: 100%;
 }
@@ -176,6 +176,24 @@ img {
   box-shadow: 0 5px 0 0 var(--dark-red-shadow);
 }
 
+.header-logo-link:active {
+  background-color: var(--dark-red);
+}
+
+.input-search-form:hover .header-search-icon {
+  opacity: 1;
+}
+
+.input-search:focus + .header-search-icon{
+  opacity: 1;
+  fill: var(--red);
+}
+
+.header-panel input:focus {
+  color: var(--black);
+  background-color: var(--white);
+}
+
 .header-button {
   font-size: 18px;
   text-decoration: none;
@@ -183,8 +201,10 @@ img {
   padding: 8px 26px;
 
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
+}
+
+.header-button:active {
+  background-color: var(--dark-blue);
 }
 
 
@@ -195,6 +215,11 @@ img {
   padding: 8px 16px 8px 17px;
 
 }
+
+.button-green:hover {
+  background-color: var(--green-success);
+}
+
 
 .button-bookmark{
   margin-left: auto;
@@ -211,6 +236,10 @@ img {
   margin-top: 2px;
 }
 
+.button-bookmark:hover::before{
+  opacity: 1;
+}
+
 .button-basket::before {
   content: "";
   background-image: url(../img/icon-cart.svg);
@@ -221,6 +250,12 @@ img {
   margin-right: 10px;
   margin-top: 2px;
 }
+
+.button-basket-main:hover::before,
+.button-basket:hover::before {
+  opacity: 1;
+}
+
 
 .header-middle {
   display: flex;
@@ -243,9 +278,6 @@ img {
 
 .header-middle-wrapper {
   margin-right: 20px;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
   margin-top: 5px;
 }
 
@@ -260,7 +292,6 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 0px 5px 0px 15px; */
   padding: 5px 10px 5px 5px;
   margin-bottom: 3px;
 
@@ -320,6 +351,15 @@ img {
 
 }
 
+.user-nav-link:hover {
+  color: var(--red);
+
+}
+
+.user-nav-link:active {
+  color: var(--grey);
+}
+
 .user-nav-login {
   display: flex;
   align-items: center;
@@ -330,54 +370,6 @@ img {
 .user-nav-login-icon {
   fill: var(--grey);
   margin-right: 6px;
-}
-
-/* Header-effects */
-
-.header-logo-link:active {
-  background-color: var(--dark-red);
-
-}
-
-.input-search-form:hover .header-search-icon {
-  opacity: 1;
-}
-
-.input-search:focus + .header-search-icon{
-  opacity: 1;
-  fill: var(--red);
-}
-
-.header-panel input:focus {
-  color: var(--black);
-  background-color: var(--white);
-}
-
-
-.header-button:active {
-  background-color: var(--dark-blue);
-}
-
-.button-bookmark:hover::before{
-  opacity: 1;
-}
-
-.button-basket-main:hover::before,
-.button-basket:hover::before {
-  opacity: 1;
-}
-
-.button-green:hover {
-  background-color: var(--green-success);
-}
-
-.user-nav-link:hover {
-  color: var(--red);
-
-}
-
-.user-nav-link:active {
-  color: var(--grey);
 }
 
 .user-nav-login:hover .user-nav-login-icon {
@@ -410,16 +402,14 @@ img {
   margin: 0 auto;
 }
 
-/* Nav-effects */
-
 .nav-link:hover {
- background-color: var(--dark-blue);
-}
+  background-color: var(--dark-blue);
+ }
 
 .nav-link:active {
   background-color: var(--dark-blue);
   opacity: 0.5;
- }
+}
 
 /* promo
 ===================== */
@@ -429,7 +419,6 @@ img {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
-
 
 .promo-section {
   margin-bottom: 59px;
@@ -574,8 +563,6 @@ img {
   margin-bottom: 70px;
 }
 
-
-
 .popular-wrapper {
   background-color: var(--yellow-background);
 
@@ -609,8 +596,6 @@ img {
 
 .popular-item {
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
   border: 1px solid #EAEAEA;
   width: 220px;
   height: 318px;
@@ -640,7 +625,7 @@ img {
 }
 
 .popular-item-title {
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
@@ -663,7 +648,7 @@ img {
 }
 
 .popular-item span {
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-weight: 700;
   font-size: 17px;
   line-height: 38px;
@@ -753,7 +738,7 @@ img {
 }
 
 .services-text {
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
 
   margin: 0;
@@ -826,7 +811,7 @@ img {
 }
 
 .services-description p {
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 25px;
   /* В макете указанно 24px,по пп надо ставить 25px.
@@ -1033,10 +1018,27 @@ img {
   color: var(--blue);
 }
 
+.user-profile-link:hover {
+  color: var(--red);
+}
 
 .user-profile-link-orders {
   margin-right: 31px;
   position: relative;
+}
+
+.user-name:active,
+.user-profile-link:active {
+  color: var(--grey);
+}
+
+.user-name:hover .user-name-icon,
+.user-name:hover .user-name-exit-icon {
+  fill: var(--icon-background);
+}
+
+.user-name-exit:hover .user-profile {
+  fill: var(--icon-background);
 }
 
 .user-profile-link-orders::after {
@@ -1050,29 +1052,6 @@ img {
   height: 5px;
   top: 6px;
   right: -17px;
-
-}
-
-/*Catalog-page header-effects
-============================= */
-
-.user-profile-link:hover {
-  color: var(--red);
-}
-
-.user-name:active,
-.user-profile-link:active {
-  color: var(--grey);
-}
-
-
-.user-name:hover .user-name-icon,
-.user-name:hover .user-name-exit-icon {
-  fill: var(--icon-background);
-}
-
-.user-name-exit:hover .user-profile {
-  fill: var(--icon-background);
 
 }
 
@@ -1092,7 +1071,7 @@ img {
 
 .bread-crumbs-list-item,
 .bread-crumbs-list-item a {
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
   text-transform: uppercase;
@@ -1145,16 +1124,16 @@ img {
 
 .range-controls {
   background-color: var(--beige);
-  /* width: 220px; */
   height: 80px;
   margin-bottom: 9px;
+
+  width: 220px;
 }
 
 .scale {
   width: 180px;
   height: 2px;
   background-color: var(--scale-background);
-  /* padding-top: 39px; */
   position: relative;
   top: 41px;
   left: 20px;
@@ -1163,15 +1142,16 @@ img {
 .bar {
   height: 2px;
   width: 80%;
-  /* Тут фигма не подсказывает какой цвет,поставил наугад */
-  background-color: var(--green-light);
+  background-color: var(--bar-background);
 }
 
 .toggle {
   display: block;
   width: 4px;
   height: 4px;
-  border: none;
+  position: absolute;
+  top: -10px;
+
   border: 8px solid var(--white);
   border-radius: 50%;
   padding: 2px;
@@ -1180,14 +1160,10 @@ img {
 }
 
 .toggle-min {
-  position: absolute;
-  top: -10px;
   left: -5px;
 }
 
 .toggle-max {
-  position: absolute;
-  top: -10px;
   left: 140px;
 }
 
@@ -1208,12 +1184,12 @@ img {
   border: none;
 }
 
-input[type='number'] {
+.input-wrapper input[type='number'] {
   -moz-appearance:textfield;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+.input-wrapper input::-webkit-outer-spin-button,
+.input-wrapper input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
@@ -1243,6 +1219,7 @@ input::-webkit-inner-spin-button {
   font-size: 13px;
   line-height: 18px;
   text-transform: uppercase;
+  background-color: var(--beige);
 
   padding: 10px 151px 10px 18px;
   margin-bottom: 13px;
@@ -1258,7 +1235,7 @@ input::-webkit-inner-spin-button {
 }
 
 .filters-form legend {
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-weight: 700;
   font-size: 17px;
   line-height: 30px;
@@ -1287,7 +1264,7 @@ input::-webkit-inner-spin-button {
 }
 
 .filter-item label {
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 15px;
   line-height: 19px;
   text-transform: uppercase;
@@ -1311,15 +1288,40 @@ input::-webkit-inner-spin-button {
 
 .filter-item-checkbox {
   width: 27px;
-  height: 43px;
+  height: 23px;
 
   position: absolute;
-  top: 0;
+  top: -2px;
   left: -30px;
 
   background-image: url(../img/icon-checkbox-off.svg);
   background-repeat: no-repeat;
 }
+
+.checkbox-input:hover + .filter-item-checkbox{
+  background-image: url(../img/checkbox-off-hover.svg);
+}
+
+.checkbox-input:checked + .filter-item-checkbox{
+  background-image: url(../img/icon-checkbox-on.svg);
+}
+
+.checkbox-input:checked:hover + .filter-item-checkbox{
+  background-image: url(../img/checkbox-on-hover.svg);
+}
+
+.checkbox-input:active + .filter-item-checkbox {
+  background-image: url(../img/checkbox-on-active.svg);
+}
+
+.checkbox-input:disabled + .filter-item-checkbox {
+  background-image: url(../img/checkbox-off-disabled.svg)
+}
+
+.checkbox-input:checked:disabled + .filter-item-checkbox {
+  background-image: url(../img/checkbox-on-disabled.svg)
+}
+
 
 .filters-radio legend {
   margin-bottom: 25px;
@@ -1338,15 +1340,42 @@ input::-webkit-inner-spin-button {
   height: 25px;
 
   position: absolute;
-  top: -25%;
+  top: -3px;
   left: -30px;
 
   background-image: url(../img/icon-radio-off.svg);
   background-repeat: no-repeat;
 }
 
+.radio-input:hover + .filter-item-radio {
+  background-image: url(../img/radio-off-hover.svg);
+}
+
+.radio-input:checked:hover + .filter-item-radio {
+  background-image: url(../img/radio-on-hover.svg);
+}
+
+.radio-input:checked + .filter-item-radio {
+  background-image: url(../img/icon-radio-on.svg);
+}
+
+/*  почему-то с атрибутом disabled иконка пропадает */
+
+.radio-input:disabled + .filter-item-radio {
+  background-image: url(../img/radio-of-disabled.svg)
+}
+
+.radio-input:active:disabled + .filter-item-radio {
+  background-image: url(../img/radio-on-disabled.svg)
+}
+
+.radio-input:active + .filter-item-radio {
+  background-image: url(../img/radio-on-active.svg)
+}
+
+
 .button-submit {
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 19px;
   text-transform: uppercase;
@@ -1356,18 +1385,6 @@ input::-webkit-inner-spin-button {
   background-color: transparent;
 }
 
-
-
-/* Filters-effects
-====================== */
-
-.checkbox-input:checked + .filter-item-checkbox{
-  background-image: url(../img/icon-checkbox-on.svg);
-}
-
-.radio-input:checked + .filter-item-radio {
-  background-image: url(../img/icon-radio-on.svg);
-}
 
 /* Sorting
 ====================== */
@@ -1381,7 +1398,7 @@ input::-webkit-inner-spin-button {
   font-size: 13px;
   line-height: 18px;
   text-transform: uppercase;
-  background-color: var(--yellow-background);
+  background-color: var(--beige);
 
   display: flex;
   margin-bottom: 28px;
@@ -1423,9 +1440,27 @@ input::-webkit-inner-spin-button {
   margin-right: 21px;
 }
 
+.button-up .sorting-button-up-img:hover,
+.button-up .sorting-button-up-img:focus {
+  fill: var(--black);
+}
+
+.button-up .sorting-button-up-img:active {
+  fill: var(--red);
+}
+
 .sorting-button-down-img{
   fill: var(--grey);
   margin-right: 14px;
+}
+
+.button-down:hover,
+.button-down:focus {
+  fill: var(--black);
+}
+
+.button-down .sorting-button-down-img:active {
+  fill: var(--red);
 }
 
 .sotring-link:not(.sotring-link-active) {
@@ -1438,33 +1473,12 @@ input::-webkit-inner-spin-button {
   color: var(--red);
 }
 
-/* Sorting-effects
-====================== */
 .sotring-link:not(.sotring-link-active):hover {
   opacity: 1;
 }
 
 .sotring-link-active:hover {
   color: var(--red-basic);
-}
-
-.button-up .sorting-button-up-img:hover,
-.button-up .sorting-button-up-img:focus {
-  fill: var(--black);
-}
-
-
-.button-down:hover,
-.button-down:focus {
-  fill: var(--black);
-}
-
-.button-up .sorting-button-up-img:active {
-  fill: var(--red);
-}
-
-.button-down .sorting-button-down-img:active {
-  fill: var(--red);
 }
 
 /* Products
@@ -1484,23 +1498,36 @@ input::-webkit-inner-spin-button {
 
   display: flex;
   flex-wrap: wrap;
-
 }
 
-.products-item {
+.products-item{
   font-size: 17px;
   line-height: 18px;
   border: 1px solid var(--grey-border);
 
   width: 220px;
   height: 318px;
-  display: flex;
+  /* display: flex;
+
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between; */
 
 
   margin-right: 20px;
   margin-bottom: 18px;
   position: relative;
 }
+
+.products-item a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
 
 .products-item:nth-child(3n) {
   margin-right: 0px;
@@ -1522,40 +1549,40 @@ input::-webkit-inner-spin-button {
   display: block;
   margin: 0 auto;
 
-  margin-top: 39px;
-  margin-bottom: 43px;
+  margin: 37px 0 45px 7px;
 }
 
 .products-item h3 {
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
   color: var(--black);
 
-  margin: 0 20px 8px 24px;
   text-align: center;
+  margin-bottom: auto;
+
+  padding: 0 20px 0 20px;
+  margin: 0;
+  margin-bottom: auto;
 }
 
-.products-item-no-discount h3{
-  margin-bottom: 40px;
-}
 
 .products-item s {
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-weight: 700;
   font-size: 17px;
   line-height: 18px;
   color: var(--grey-del);
 
-  display: block;
-  margin-bottom: 13px;
+
+  margin-bottom: 11px;
   text-align: center;
 }
 
 .products-item span {
 
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-weight: 700;
   font-size: 17px;
   line-height: 38px;
@@ -1563,12 +1590,15 @@ input::-webkit-inner-spin-button {
   color: var(--white);
   background-image: url(../img/button-price.svg);
 
-  display: block;
+
   width: 141px;
   height: 38px;
 
-  margin-left: 44px;
+  margin-left: 12px;
+  margin-bottom: 20px;
   padding-left: 33px;
+
+
 }
 
 /* Site-nav
@@ -1582,6 +1612,10 @@ input::-webkit-inner-spin-button {
   align-items: center;
 
   margin-bottom: 58px;
+}
+
+.site-nav-item:active{
+  border: 1px solid var(--red);
 }
 
 .site-nav-item a{
@@ -1607,7 +1641,7 @@ input::-webkit-inner-spin-button {
 }
 
 .site-nav-item-button a{
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
   text-transform: uppercase;
@@ -1619,13 +1653,6 @@ input::-webkit-inner-spin-button {
   min-height: 38px;
   padding: 0;
 }
-
-/* Site-nav effects */
-
-.site-nav-item:active{
-  border: 1px solid var(--red);
-}
-
 
 /* Perforator-description
 ==================== */
@@ -1647,7 +1674,7 @@ input::-webkit-inner-spin-button {
 .perforator-description p {
   margin: 0;
 
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
 }
 
@@ -1723,6 +1750,16 @@ input::-webkit-inner-spin-button {
   color: var(--yellow)
 }
 
+.list-top-item a:hover,
+.list-bottom-item a:hover {
+  text-decoration: underline;
+}
+
+.list-top-item a:active,
+.list-bottom-item a:active {
+  opacity: 0.5;
+}
+
 .footer-contacts {
   background-color: var(--dark-blue);
 
@@ -1757,57 +1794,6 @@ input::-webkit-inner-spin-button {
   fill: var(--social-background)
 }
 
-.footer-feedback {
-  font-size: 16px;
-  line-height: 18px;
-  color: var(--white);
-
-  margin: 0;
-  margin-right: 51px;
-  margin-left: 115px;
-  margin-top: 2px;
-}
-
-.footer-feedback a {
-  color: var(--yellow);
-}
-
-.footer-developer {
-  font-size: 16px;
-  line-height: 18px;
-  color: var(--white);
-
-  margin: 0;
-  margin-right: 13px;
-  margin-top: 2px;
-}
-
-.footer-developer a {
-  color: var(--yellow);
-}
-
-/* Footer-effects */
-
-.list-top-item a:hover,
-.list-bottom-item a:hover {
-  text-decoration: underline;
-}
-
-.list-top-item a:active,
-.list-bottom-item a:active {
-  opacity: 0.5;
-}
-
-.footer-feedback a:hover,
-.footer-developer a:hover {
-  text-decoration: underline;
-}
-
-.footer-feedback a:active,
-.footer-developer a:active {
-  color: var(--dark-red);
-}
-
 .social-item-icon:hover {
   fill: var(--red)
 }
@@ -1839,6 +1825,45 @@ input::-webkit-inner-spin-button {
 
 .socal-link-insta {
   background-image: url(../img/icon-insta.svg);
+}
+
+.footer-feedback {
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--white);
+
+  margin: 0;
+  margin-right: 51px;
+  margin-left: 115px;
+  margin-top: 2px;
+}
+
+.footer-feedback a {
+  color: var(--yellow);
+}
+
+.footer-developer {
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--white);
+
+  margin: 0;
+  margin-right: 13px;
+  margin-top: 2px;
+}
+
+.footer-developer a {
+  color: var(--yellow);
+}
+
+.footer-feedback a:hover,
+.footer-developer a:hover {
+  text-decoration: underline;
+}
+
+.footer-feedback a:active,
+.footer-developer a:active {
+  color: var(--dark-red);
 }
 
 /* Popups */
