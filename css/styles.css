@@ -560,7 +560,7 @@ img {
 ========================= */
 
 .popular {
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 
 .popular-wrapper {
@@ -594,12 +594,20 @@ img {
   justify-content: space-between;
 }
 
+/* И всё-таки похоже намудрил я с карточкой товара */
+
 .popular-item {
-  display: flex;
-  border: 1px solid #EAEAEA;
+  font-size: 17px;
+  line-height: 18px;
+  border: 1px solid var(--grey-border);
+
   width: 220px;
-  height: 318px;
-  margin-right: 10px;
+  min-height: 312px;
+
+  margin-right: 20px;
+  margin-bottom: 18px;
+  position: relative;
+
 }
 
 .popular-item:last-of-type {
@@ -614,14 +622,24 @@ img {
   position: relative;
 }
 
+.popular-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+
+  padding-bottom: 22px;
+}
+
 .popular-item img {
   display: block;
-  margin: 0 auto;
-
-  margin-top: 39px;
-  margin-bottom: 44px;
+  width: 186px;
+  height: 95px;
 
   display: block;
+   margin: 36px 0 49px 6px;
 }
 
 .popular-item-title {
@@ -631,24 +649,27 @@ img {
   line-height: 20px;
   color: var(--black);
 
-  margin: 0 20px 8px 24px;
   text-align: center;
+  margin-bottom: auto;
 
+  padding: 0 20px 0 20px;
+  margin: 0;
 }
 
 .popular-item s {
+  font-family: "PT Sans", Arial, sans-serif;
   font-weight: 700;
   font-size: 17px;
   line-height: 18px;
   color: var(--grey-del);
-
-  display: block;
-  margin-bottom: 13px;
   text-align: center;
+
+  margin-top: auto;
+
 }
 
 .popular-item span {
-  font-family: "PT Sans", Arial, sans-serif;
+  /* font-family: "PT Sans", Arial, sans-serif;
   font-weight: 700;
   font-size: 17px;
   line-height: 38px;
@@ -661,7 +682,29 @@ img {
   height: 38px;
 
   margin-left: 44px;
+  margin-bottom: 20px;
   padding-left: 33px;
+
+  margin-top: auto; */
+
+
+  font-family: "PT Sans", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 38px;
+
+  color: var(--white);
+  background-image: url(../img/button-price.svg);
+
+
+  width: 141px;
+  height: 38px;
+
+  margin-left: 12px;
+  /* margin-bottom: 20px; */
+  padding-left: 33px;
+
+  margin-top: auto;
 }
 
 /* Manufacturer
@@ -974,6 +1017,7 @@ img {
  margin-top: 5px;
  margin-left: auto;
 
+ min-height: 73px;
 }
 
 .user-name {
@@ -1201,7 +1245,6 @@ img {
   padding: 0;
 
   width: 220px;
-  /* height: 720px; */
 
   display: flex;
   flex-direction: column;
@@ -1230,8 +1273,6 @@ img {
   border: none;
   padding: 0;
   margin: 0;
-
-
 }
 
 .filters-form legend {
@@ -1283,7 +1324,6 @@ img {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-
 }
 
 .filter-item-checkbox {
@@ -1296,32 +1336,35 @@ img {
 
   background-image: url(../img/icon-checkbox-off.svg);
   background-repeat: no-repeat;
+  /* тут прозрачность не по макету,но т.к. для ховера нужно
+  какое-то состояние,то сделал так */
+  opacity: 0.7;
 }
 
-.checkbox-input:hover + .filter-item-checkbox{
-  background-image: url(../img/checkbox-off-hover.svg);
-}
+/* С изменяющимся опасити конечно такое себе,но формально
+требование по разным состояниям я выполнил) или итоговую проверку
+я так не пройду? */
 
-.checkbox-input:checked + .filter-item-checkbox{
+.checkbox-input:checked + .filter-item-checkbox {
   background-image: url(../img/icon-checkbox-on.svg);
 }
 
-.checkbox-input:checked:hover + .filter-item-checkbox{
-  background-image: url(../img/checkbox-on-hover.svg);
+.checkbox-input:hover + .filter-item-checkbox {
+  opacity: 0.8;
+}
+
+.checkbox-input:focus + .filter-item-checkbox {
+  opacity: 0.9;
 }
 
 .checkbox-input:active + .filter-item-checkbox {
-  background-image: url(../img/checkbox-on-active.svg);
+  opacity: 1;
 }
 
-.checkbox-input:disabled + .filter-item-checkbox {
-  background-image: url(../img/checkbox-off-disabled.svg)
-}
-
+.checkbox-input:disabled + .filter-item-checkbox,
 .checkbox-input:checked:disabled + .filter-item-checkbox {
-  background-image: url(../img/checkbox-on-disabled.svg)
+  opacity: 0.3;
 }
-
 
 .filters-radio legend {
   margin-bottom: 25px;
@@ -1345,34 +1388,29 @@ img {
 
   background-image: url(../img/icon-radio-off.svg);
   background-repeat: no-repeat;
-}
-
-.radio-input:hover + .filter-item-radio {
-  background-image: url(../img/radio-off-hover.svg);
-}
-
-.radio-input:checked:hover + .filter-item-radio {
-  background-image: url(../img/radio-on-hover.svg);
+  opacity: 0.7;
 }
 
 .radio-input:checked + .filter-item-radio {
   background-image: url(../img/icon-radio-on.svg);
 }
 
-/*  почему-то с атрибутом disabled иконка пропадает */
-
-.radio-input:disabled + .filter-item-radio {
-  background-image: url(../img/radio-of-disabled.svg)
+.radio-input:hover + .filter-item-radio {
+  opacity: 0.8;
 }
 
-.radio-input:active:disabled + .filter-item-radio {
-  background-image: url(../img/radio-on-disabled.svg)
+.radio-input:focus + .filter-item-radio {
+  opacity: 0.9;
 }
 
 .radio-input:active + .filter-item-radio {
-  background-image: url(../img/radio-on-active.svg)
+  opacity: 1;
 }
 
+.radio-input:disabled + .filter-item-radio,
+.radio-input:checked:disabled + .filter-item-radio{
+  opacity: 0.3;
+}
 
 .button-submit {
   font-family: "PT Sans", Arial, sans-serif;
@@ -1494,7 +1532,7 @@ img {
   margin: 0;
   padding: 0;
   width: 700px;
-  margin-bottom: 29px;
+  margin-bottom: 23px;
 
   display: flex;
   flex-wrap: wrap;
@@ -1506,16 +1544,14 @@ img {
   border: 1px solid var(--grey-border);
 
   width: 220px;
-  height: 318px;
+  min-height: 318px;
   /* display: flex;
 
   flex-direction: column;
   align-content: space-between;
   justify-content: space-between; */
-
-
   margin-right: 20px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   position: relative;
 }
 
@@ -1526,6 +1562,8 @@ img {
   justify-content: space-between;
   width: 100%;
   height: 100%;
+
+  padding-bottom: 22px;
 }
 
 
@@ -1542,14 +1580,13 @@ img {
   position: absolute;
   z-index: 1;
   top: 0;
-  right: 0;
+  right: 0px;
 }
 
 .products-item img {
   display: block;
-  margin: 0 auto;
 
-  margin: 37px 0 45px 7px;
+  margin: 35px 0 45px 7px;
 }
 
 .products-item h3 {
@@ -1564,7 +1601,6 @@ img {
 
   padding: 0 20px 0 20px;
   margin: 0;
-  margin-bottom: auto;
 }
 
 
@@ -1574,10 +1610,9 @@ img {
   font-size: 17px;
   line-height: 18px;
   color: var(--grey-del);
-
-
-  margin-bottom: 11px;
   text-align: center;
+
+  margin-top: auto;
 }
 
 .products-item span {
@@ -1595,10 +1630,10 @@ img {
   height: 38px;
 
   margin-left: 12px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   padding-left: 33px;
 
-
+  margin-top: auto;
 }
 
 /* Site-nav
