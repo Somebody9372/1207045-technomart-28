@@ -20,6 +20,7 @@
   --green-success: #5FBB2D;
   --green-light: #8ED78F;
   --grey: #C5C5C5;
+  --grey-hover: #B5B5B5;
   --grey-opacity:rgba(197, 197, 197, 0.3);
   --grey-del: #A9A9A9;
   --grey-del-opacity: rgba(169, 169, 169, 0.3);
@@ -109,7 +110,7 @@ img {
 /* Header
 ======================= */
 .header {
-  margin-bottom: 62px;
+  margin-bottom: 21px;
   padding-bottom: 60px;
   background-color: var(--white-background);
 }
@@ -413,6 +414,11 @@ img {
 
 /* promo
 ===================== */
+
+.main > .promo-section {
+  margin-top: 63px;
+}
+
 .promo-wrapper {
   display: grid;
   gap: 20px;
@@ -560,7 +566,7 @@ img {
 ========================= */
 
 .popular {
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 
 .popular-wrapper {
@@ -594,52 +600,48 @@ img {
   justify-content: space-between;
 }
 
-/* И всё-таки похоже намудрил я с карточкой товара */
-
 .popular-item {
-  font-size: 17px;
-  line-height: 18px;
   border: 1px solid var(--grey-border);
-
   width: 220px;
-  min-height: 312px;
-
+  min-height: 318px;
   margin-right: 20px;
-  margin-bottom: 18px;
-  position: relative;
 
+  display: flex;
 }
 
 .popular-item:last-of-type {
   margin-right: 0;
 }
 
-.popular-item:last-of-type h3 {
-  margin-bottom: 39px;
-}
 
 .popular-item-new {
   position: relative;
+}
+
+.popular-item-new::after {
+  content: "";
+  width: 70px;
+  height: 70px;
+  background-image: url(../img/new.svg);
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0px;
 }
 
 .popular-item a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-
-  padding-bottom: 22px;
 }
 
 .popular-item img {
-  display: block;
-  width: 186px;
+  width: 185px;
   height: 95px;
 
-  display: block;
-   margin: 36px 0 49px 6px;
+  margin-top: 39px;
+  margin-bottom: 44px;
+  margin-left: 5px;
 }
 
 .popular-item-title {
@@ -649,11 +651,12 @@ img {
   line-height: 20px;
   color: var(--black);
 
-  text-align: center;
-  margin-bottom: auto;
-
-  padding: 0 20px 0 20px;
   margin: 0;
+
+  /* margin: 0 20px 8px 24px; */
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: auto;
 }
 
 .popular-item s {
@@ -662,32 +665,12 @@ img {
   font-size: 17px;
   line-height: 18px;
   color: var(--grey-del);
-  text-align: center;
 
-  margin-top: auto;
+  margin-bottom: 13px;
 
 }
 
 .popular-item span {
-  /* font-family: "PT Sans", Arial, sans-serif;
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 38px;
-
-  color: var(--white);
-  background-image: url(../img/button-price.svg);
-
-  display: block;
-  width: 141px;
-  height: 38px;
-
-  margin-left: 44px;
-  margin-bottom: 20px;
-  padding-left: 33px;
-
-  margin-top: auto; */
-
-
   font-family: "PT Sans", Arial, sans-serif;
   font-weight: 700;
   font-size: 17px;
@@ -700,11 +683,9 @@ img {
   width: 141px;
   height: 38px;
 
-  margin-left: 12px;
-  /* margin-bottom: 20px; */
   padding-left: 33px;
-
-  margin-top: auto;
+  margin-bottom: 21px;
+  transform: translateX(6px)
 }
 
 /* Manufacturer
@@ -997,9 +978,6 @@ img {
 /*Catalog-page header
 =================== */
 
-.header-catalog {
-  margin-bottom: 21px;
-}
 
 .button-basket-active {
   font-size: 18px;
@@ -1324,27 +1302,70 @@ img {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+
+  position: relative;
 }
 
-.filter-item-checkbox {
-  width: 27px;
-  height: 23px;
+ .filter-item-checkbox {
+  /* width: 27px;
+  height: 23px; */
 
   position: absolute;
   top: -2px;
   left: -30px;
 
-  background-image: url(../img/icon-checkbox-off.svg);
+  /* background-image: url(../img/icon-checkbox-off.svg);
   background-repeat: no-repeat;
-  /* тут прозрачность не по макету,но т.к. для ховера нужно
-  какое-то состояние,то сделал так */
-  opacity: 0.7;
+  opacity: 0.7; */
 }
 
-/* С изменяющимся опасити конечно такое себе,но формально
-требование по разным состояниям я выполнил) или итоговую проверку
-я так не пройду? */
+.checkbox-icon {
+  fill: var(--grey);
+  position: absolute;
+  top: 0;
+  left: -20px;
+}
 
+
+.checkbox-icon-on {
+  fill: none;
+}
+
+.checkbox-input:checked + .checkbox-icon .checkbox-icon-on{
+  fill: var(--grey);
+}
+
+.checkbox-input:checked + .checkbox-icon .checkbox-icon-off {
+  fill: none;
+}
+
+/* C ховером я так ничего и не родил)) */
+.checkbox-input:hover + .checkbox-icon {
+  fill: var(--grey-hover);
+}
+
+.checkbox-input:checked:hover + .checkbox-icon {
+  fill: var(--grey-hover);
+
+}
+
+/* radio */
+
+.radio-icon {
+  fill: var(--grey);
+}
+
+.radio-input + .radio-icon-on {
+  fill: none;
+}
+
+.radio-input:checked + .radio-icon {
+  fill: var(--grey);
+}
+
+
+
+/*
 .checkbox-input:checked + .filter-item-checkbox {
   background-image: url(../img/icon-checkbox-on.svg);
 }
@@ -1361,10 +1382,9 @@ img {
   opacity: 1;
 }
 
-.checkbox-input:disabled + .filter-item-checkbox,
-.checkbox-input:checked:disabled + .filter-item-checkbox {
+.checkbox-input:disabled + .filter-item-checkbox {
   opacity: 0.3;
-}
+} */
 
 .filters-radio legend {
   margin-bottom: 25px;
@@ -1378,6 +1398,8 @@ img {
   margin-bottom: 36px;
 }
 
+
+/*
 .filter-item-radio {
   width: 25px;
   height: 25px;
@@ -1388,7 +1410,7 @@ img {
 
   background-image: url(../img/icon-radio-off.svg);
   background-repeat: no-repeat;
-  opacity: 0.7;
+
 }
 
 .radio-input:checked + .filter-item-radio {
@@ -1407,10 +1429,9 @@ img {
   opacity: 1;
 }
 
-.radio-input:disabled + .filter-item-radio,
-.radio-input:checked:disabled + .filter-item-radio{
+.radio-input:disabled + .filter-item-radio {
   opacity: 0.3;
-}
+} */
 
 .button-submit {
   font-family: "PT Sans", Arial, sans-serif;
@@ -1519,6 +1540,12 @@ img {
   color: var(--red-basic);
 }
 
+.sotring-link:focus,
+.sotring-link-active:focus {
+  color: var(--red);
+}
+
+
 /* Products
 ====================== */
 
@@ -1532,7 +1559,7 @@ img {
   margin: 0;
   padding: 0;
   width: 700px;
-  margin-bottom: 23px;
+  margin-bottom: 30px;
 
   display: flex;
   flex-wrap: wrap;
@@ -1545,25 +1572,19 @@ img {
 
   width: 220px;
   min-height: 318px;
-  /* display: flex;
 
-  flex-direction: column;
-  align-content: space-between;
-  justify-content: space-between; */
+  display: flex;
+
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   position: relative;
+
 }
 
 .products-item a{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-
-  padding-bottom: 22px;
 }
 
 
@@ -1571,8 +1592,7 @@ img {
   margin-right: 0px;
 }
 
-.products-item-new::after,
-.popular-item-new::after {
+.products-item-new::after {
   content: "";
   width: 70px;
   height: 70px;
@@ -1584,9 +1604,9 @@ img {
 }
 
 .products-item img {
-  display: block;
-
-  margin: 35px 0 45px 7px;
+  margin-top: 36px;
+  margin-bottom: 46px;
+  transform: translateX(3px);
 }
 
 .products-item h3 {
@@ -1596,11 +1616,12 @@ img {
   line-height: 20px;
   color: var(--black);
 
-  text-align: center;
-  margin-bottom: auto;
-
-  padding: 0 20px 0 20px;
   margin: 0;
+
+  /* margin: 0 20px 8px 24px; */
+  text-align: center;
+  padding: 0 20px;
+  margin-bottom: auto;
 }
 
 
@@ -1610,9 +1631,9 @@ img {
   font-size: 17px;
   line-height: 18px;
   color: var(--grey-del);
-  text-align: center;
+  /* text-align: center; */
 
-  margin-top: auto;
+  margin-bottom: 13px;
 }
 
 .products-item span {
@@ -1625,15 +1646,12 @@ img {
   color: var(--white);
   background-image: url(../img/button-price.svg);
 
-
   width: 141px;
   height: 38px;
 
-  margin-left: 12px;
-  /* margin-bottom: 20px; */
   padding-left: 33px;
-
-  margin-top: auto;
+  margin-bottom: 22px;
+  transform: translateX(6px);
 }
 
 /* Site-nav
@@ -2007,13 +2025,20 @@ padding: 73px 0;
 
 /* Catalog-item */
 
-/*
-.catalog-item {
-  display: flex;
+
+/* .catalog-item {
   border: 1px solid var(--grey-border);
   width: 220px;
-  height: 318px;
+  min-height: 318px;
   margin-right: 20px;
+
+  display: flex;
+}
+
+.catalog-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .popular-item:last-of-type {
@@ -2029,22 +2054,24 @@ padding: 73px 0;
 }
 
 .catalog-item img {
-  display: block;
-  margin: 0 auto;
-
   margin-top: 39px;
   margin-bottom: 44px;
+  transform: translateX(5px);
+
 }
 
 .catalog-title {
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
   color: var(--black);
 
-  margin: 0 20px 8px 24px;
+  margin: 0;
+
   text-align: center;
+  padding: 0 20px;
+  margin-bottom: auto;
 
 }
 
@@ -2054,13 +2081,11 @@ padding: 73px 0;
   line-height: 18px;
   color: var(--grey-del);
 
-  display: block;
   margin-bottom: 13px;
-  text-align: center;
 }
 
 .catalog-new-price {
-  font-family: PT Sans;
+  font-family: "PT Sans", Arial, sans-serif;
   font-weight: 700;
   font-size: 17px;
   line-height: 38px;
@@ -2068,12 +2093,12 @@ padding: 73px 0;
   color: var(--white);
   background-image: url(../img/button-price.svg);
 
-  display: block;
   width: 141px;
   height: 38px;
 
-  margin-left: 44px;
   padding-left: 33px;
+  margin-bottom: 20px;
+  transform: translateX(6px)
 }
  */
 
@@ -2222,3 +2247,18 @@ padding: 73px 0;
   margin-left: 8px;
 
 } */
+
+
+/*   <svg class="checkbox-icon" width="27" height="23" viewBox="0 0 27 23">
+                    <g class="checkbox-icon-on">
+                      <path
+                        d="M7.28505 7.48598L4.45605 10.315L12.2391 18.098L26.1711 4.16598L23.3431 1.33698L12.2391 12.439L7.28505 7.48598Z" />
+                      <path
+                        d="M21 20C21 20.542 20.542 21 20 21H3C2.458 21 2 20.542 2 20V3C2 2.458 2.458 2 3 2H19.908L21.493 0.415C21.041 0.146542 20.5257 0.00329969 20 0H3C1.35 0 0 1.35 0 3V20C0 21.65 1.35 23 3 23H20C21.65 23 23 21.65 23 20V10.171L21 12.171V20Z" />
+                    </g>
+
+                    <g class="checkbox-icon-off">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3 0H20C21.65 0 23 1.35 23 3V20C23 21.65 21.65 23 20 23H3C1.35 23 0 21.65 0 20V3C0 1.35 1.35 0 3 0ZM21 3C21 2.458 20.542 2 20 2H3C2.458 2 2 2.458 2 3V20C2 20.542 2.458 21 3 21H20C20.542 21 21 20.542 21 20V3Z" />
+                    </g>
+                  </svg>*/
