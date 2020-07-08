@@ -1328,42 +1328,64 @@ img {
 
 
 .checkbox-icon-on {
-  fill: none;
+  display: none;
 }
 
 .checkbox-input:checked + .checkbox-icon .checkbox-icon-on{
-  fill: var(--grey);
+  /* fill: var(--grey); */
+  display: block;
 }
 
 .checkbox-input:checked + .checkbox-icon .checkbox-icon-off {
-  fill: none;
+  display: none;
 }
 
-/* C ховером я так ничего и не родил)) */
+
 .checkbox-input:hover + .checkbox-icon {
   fill: var(--grey-hover);
-}
 
+}
+/*
 .checkbox-input:checked:hover + .checkbox-icon {
   fill: var(--grey-hover);
 
-}
+
+} */
 
 /* radio */
 
 .radio-icon {
   fill: var(--grey);
+  position: absolute;
+  top: 0;
+  left: -20px;
+
 }
 
-.radio-input + .radio-icon-on {
-  fill: none;
+.radio-icon-on {
+  display: none;
 }
 
-.radio-input:checked + .radio-icon {
-  fill: var(--grey);
+.radio-input:checked + .radio-icon .radio-icon-on {
+  /* fill: var(--grey); */
+  display: block;
+
 }
 
+.radio-input:checked + .radio-icon-off {
+  display: none;
 
+}
+
+/* .radio-input:hover + .radio-icon .radio-icon-on,
+.radio-input:hover + .radio-icon {
+  fill:var(--grey-hover);
+} */
+
+
+.radio-input:hover + .radio-icon {
+  fill:var(--grey-hover);
+}
 
 /*
 .checkbox-input:checked + .filter-item-checkbox {
