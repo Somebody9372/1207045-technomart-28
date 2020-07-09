@@ -8,7 +8,7 @@
   --red-basic: red;
   --red: #EE3643;
   --dark-red: #BA2732;
-  --dark-red-shadow: #8A1F27;
+  --dark-red-shadow: #B52933;
   --blue-special: #3BBCE3;
   --blue: #32425C;
   --dark-blue: #161D29;
@@ -19,8 +19,10 @@
   --basic-green: #63A63E;
   --green-success: #5FBB2D;
   --green-light: #8ED78F;
+  --green-dark: #518534;
   --grey: #C5C5C5;
   --grey-hover: #B5B5B5;
+  --grey-site-nav: #E5E5E5;
   --grey-opacity:rgba(197, 197, 197, 0.3);
   --grey-del: #A9A9A9;
   --grey-del-opacity: rgba(169, 169, 169, 0.3);
@@ -526,6 +528,34 @@ img {
   grid-row: 2/4;
 }
 
+.promo-slider::before {
+  content: url(../img/slider-icon-left.svg);
+  width: 100px;
+  height: 100px;
+  /* background-image: url(../img/slider-icon-left.svg); */
+
+  position: absolute;
+  left: 24px;
+   top: 50%;
+  /*margin-top: -10px;
+  как вариант) */
+  transform: translateY(-10px)
+}
+
+.promo-slider::after {
+  content: url(../img/slider-icon-left.svg);
+  width: 100px;
+  height: 100px;
+  /* background-image: url(../img/slider-icon-left.svg); */
+
+  position: absolute;
+  right: 20px;
+  top: 63px;
+
+  transform: rotate(180deg);
+}
+
+
 .slider-content {
   position: absolute;
   top: 0px;
@@ -606,6 +636,8 @@ img {
   min-height: 318px;
   margin-right: 20px;
 
+  position: relative;
+
   display: flex;
 }
 
@@ -613,10 +645,6 @@ img {
   margin-right: 0;
 }
 
-
-.popular-item-new {
-  position: relative;
-}
 
 .popular-item-new::after {
   content: "";
@@ -633,6 +661,10 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.popular-item:hover .hover-block {
+  display: block;
 }
 
 .popular-item img {
@@ -688,6 +720,80 @@ img {
   transform: translateX(6px)
 }
 
+/* Hover */
+
+/* .hover-block {
+  position: absolute;
+  left: 41px;
+  top: 38px;
+  min-width: 135px;
+  min-height: 87px;
+
+  display: none;
+} */
+
+
+/* почемум-то растягивается на всю ширину,не могу понять в чем дело */
+
+.hover-block {
+  position: absolute;
+  background-color: var(--white);
+  top: 38px;
+  width: 100%;
+  min-height: 87px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+
+  display: none;
+}
+
+.hover-link {
+  min-width: 135px;
+  min-height: 38px;
+
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  border-radius: 2px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hover-link-buy {
+  color: var(--white);
+  margin-bottom: 10px;
+  background-color: var(--basic-green);
+}
+
+.hover-link-buy:hover {
+  background-color: var(--green-success);
+}
+
+.hover-link-buy:active{
+  background-color: var(--green-dark);
+}
+
+.hover-link-bookmarks {
+  color: var(--dark-blue);
+  background-color: var(--white);
+
+  border: 3px solid var(--basic-green);
+  border-radius: 2px;
+}
+
+.hover-link-bookmarks:hover {
+  border-color: var(--blue);
+}
+
+.hover-link-bookmarks:active{
+  border: 3px solid var(--grey);
+}
 /* Manufacturer
  ============================*/
 
@@ -1150,6 +1256,8 @@ img {
   margin-bottom: 9px;
 
   width: 220px;
+
+  border-radius: 3px;
 }
 
 .scale {
@@ -1204,6 +1312,7 @@ img {
   text-align: center;
   background-color: var(--beige);
   border: none;
+  border-radius: 3px;
 }
 
 .input-wrapper input[type='number'] {
@@ -1244,6 +1353,8 @@ img {
 
   padding: 10px 151px 10px 18px;
   margin-bottom: 13px;
+
+  border-radius: 3px;
 }
 
 
@@ -1279,7 +1390,6 @@ img {
 
 .filter-item {
   margin-bottom: 15px;
-  margin-left: 30px;
 }
 
 .filter-item label {
@@ -1290,8 +1400,9 @@ img {
   color: var(--black);
 
   position: relative;
-  padding-left: 6px;
+  padding-left: 31px;
 }
+
 
 .filter-item input {
   font-family: "PT Sans",Arial,sans-serif;
@@ -1304,26 +1415,17 @@ img {
   appearance: none;
 
   position: relative;
+
+
 }
 
- .filter-item-checkbox {
-  /* width: 27px;
-  height: 23px; */
 
-  position: absolute;
-  top: -2px;
-  left: -30px;
-
-  /* background-image: url(../img/icon-checkbox-off.svg);
-  background-repeat: no-repeat;
-  opacity: 0.7; */
-}
 
 .checkbox-icon {
   fill: var(--grey);
   position: absolute;
   top: 0;
-  left: -20px;
+  left: 0;
 }
 
 
@@ -1332,7 +1434,6 @@ img {
 }
 
 .checkbox-input:checked + .checkbox-icon .checkbox-icon-on{
-  /* fill: var(--grey); */
   display: block;
 }
 
@@ -1340,26 +1441,35 @@ img {
   display: none;
 }
 
-
-.checkbox-input:hover + .checkbox-icon {
+.filter-checkbox-label:hover .checkbox-icon {
   fill: var(--grey-hover);
-
 }
-/*
-.checkbox-input:checked:hover + .checkbox-icon {
+
+.checkbox-input:focus + .checkbox-icon {
+  fill: var(--dark-blue);
+  opacity: 0.7;
+}
+
+.filter-checkbox-label:active .checkbox-icon {
+  fill: var(--dark-blue);
+}
+
+.checkbox-input:disabled + .checkbox-icon {
   fill: var(--grey-hover);
+  opacity: 0.3;
+}
 
-
-} */
+.checkbox-input:disabled ~ span {
+  opacity: 0.4;
+}
 
 /* radio */
 
 .radio-icon {
   fill: var(--grey);
   position: absolute;
-  top: 0;
-  left: -20px;
-
+  top: -3px;
+  left: 0;
 }
 
 .radio-icon-on {
@@ -1367,46 +1477,34 @@ img {
 }
 
 .radio-input:checked + .radio-icon .radio-icon-on {
-  /* fill: var(--grey); */
   display: block;
-
 }
 
-.radio-input:checked + .radio-icon-off {
-  display: none;
-
-}
-
-/* .radio-input:hover + .radio-icon .radio-icon-on,
-.radio-input:hover + .radio-icon {
-  fill:var(--grey-hover);
-} */
-
+/* задался вопросом,почему что бы ховер срабатывал нужен
+или +, или ~,а просто вложенность не срабатывает? */
 
 .radio-input:hover + .radio-icon {
   fill:var(--grey-hover);
 }
 
-/*
-.checkbox-input:checked + .filter-item-checkbox {
-  background-image: url(../img/icon-checkbox-on.svg);
+.radio-input:focus + .radio-icon {
+  fill: var(--dark-blue);
+  opacity: 0.7;
 }
 
-.checkbox-input:hover + .filter-item-checkbox {
-  opacity: 0.8;
+.filter-radio-label:active .radio-icon {
+  fill: var(--dark-blue);
 }
 
-.checkbox-input:focus + .filter-item-checkbox {
-  opacity: 0.9;
-}
 
-.checkbox-input:active + .filter-item-checkbox {
-  opacity: 1;
-}
-
-.checkbox-input:disabled + .filter-item-checkbox {
+.radio-input:disabled + .radio-icon {
+  fill: var(--grey-hover);
   opacity: 0.3;
-} */
+}
+
+.radio-input:disabled ~ span {
+  opacity: 0.4;
+}
 
 .filters-radio legend {
   margin-bottom: 25px;
@@ -1420,40 +1518,6 @@ img {
   margin-bottom: 36px;
 }
 
-
-/*
-.filter-item-radio {
-  width: 25px;
-  height: 25px;
-
-  position: absolute;
-  top: -3px;
-  left: -30px;
-
-  background-image: url(../img/icon-radio-off.svg);
-  background-repeat: no-repeat;
-
-}
-
-.radio-input:checked + .filter-item-radio {
-  background-image: url(../img/icon-radio-on.svg);
-}
-
-.radio-input:hover + .filter-item-radio {
-  opacity: 0.8;
-}
-
-.radio-input:focus + .filter-item-radio {
-  opacity: 0.9;
-}
-
-.radio-input:active + .filter-item-radio {
-  opacity: 1;
-}
-
-.radio-input:disabled + .filter-item-radio {
-  opacity: 0.3;
-} */
 
 .button-submit {
   font-family: "PT Sans", Arial, sans-serif;
@@ -1480,6 +1544,7 @@ img {
   line-height: 18px;
   text-transform: uppercase;
   background-color: var(--beige);
+  border-radius: 3px;
 
   display: flex;
   margin-bottom: 28px;
@@ -1603,6 +1668,11 @@ img {
 
 }
 
+.products-item:hover .hover-block {
+  display: block;
+  z-index: 1;
+}
+
 .products-item a{
   display: flex;
   flex-direction: column;
@@ -1689,8 +1759,8 @@ img {
   margin-bottom: 58px;
 }
 
-.site-nav-item:active{
-  border: 1px solid var(--red);
+.site-nav-item + .site-nav-item {
+  margin-left: 9px;
 }
 
 .site-nav-item a{
@@ -1698,13 +1768,24 @@ img {
   font-size: 13px;
   line-height: 18px;
   color: var(--black);
-  border:1px solid var(--grey);
+  border:1px solid var(--grey-site-nav);
   border-radius: 2px;
 
   padding: 10px 15px;
-  margin-right: 9px;
   display: block;
 
+}
+
+.site-nav-item a:hover{
+  border: 1px solid var(--grey);
+}
+
+.site-nav-item a:focus{
+  border: 1px solid var(--dark-red-shadow);
+}
+
+.site-nav-item a:active{
+  border: 1px solid var(--red);
 }
 
 .site-nav-item-active a{
