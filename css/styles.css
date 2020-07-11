@@ -11,6 +11,8 @@
   --dark-red-shadow: #B52933;
   --blue-special: #3BBCE3;
   --blue: #32425C;
+  --blue-hover: #293449;
+  --blue-shadow: #405069;
   --dark-blue: #161D29;
   --yellow: #FFDA96;
   --yellow-special: #FFBF47;
@@ -20,6 +22,7 @@
   --green-success: #5FBB2D;
   --green-light: #8ED78F;
   --green-dark: #518534;
+  --green-shadow: #367315;
   --grey: #C5C5C5;
   --grey-hover: #B5B5B5;
   --grey-site-nav: #E5E5E5;
@@ -29,6 +32,7 @@
   --lilac-special: #DC91D8;
 
   --slider-background: rgba(0, 0, 0, 0.25);
+  --card-shadow: rgba(0, 0, 0, 0.15);
   --link-background: rgba(255, 255, 255, 0.3);
   --social-background: #212A3A;
   --grey-border: #EAEAEA;
@@ -128,7 +132,6 @@ img {
   margin: 0 auto;
 
   display: flex;
-  /* align-items: center; */
 }
 
 .input-search-form {
@@ -173,7 +176,8 @@ img {
   justify-content: center;
   align-items: center;
   width: 220px;
-  height: 40px;
+  height: 39px;
+
 
   background-color: var(--red);
   box-shadow: 0 5px 0 0 var(--dark-red-shadow);
@@ -204,6 +208,7 @@ img {
   padding: 8px 26px;
 
   display: flex;
+  align-items: center;
 }
 
 .header-button:active {
@@ -223,9 +228,9 @@ img {
   background-color: var(--green-success);
 }
 
-
-.button-bookmark{
-  margin-left: auto;
+.button-green:active {
+  background-color: var(--green-success);
+  opacity: 0.7;
 }
 
 .button-bookmark::before {
@@ -236,11 +241,15 @@ img {
   width: 14px;
   height: 16px;
   margin-right: 7px;
-  margin-top: 2px;
+
 }
 
 .button-bookmark:hover::before{
   opacity: 1;
+}
+
+.button-bookmark:active::before{
+  opacity: 0.7;
 }
 
 .button-basket::before {
@@ -251,7 +260,6 @@ img {
   width: 15px;
   height: 15px;
   margin-right: 10px;
-  margin-top: 2px;
 }
 
 .button-basket-main:hover::before,
@@ -259,6 +267,10 @@ img {
   opacity: 1;
 }
 
+.button-basket-main:active::before,
+.button-basket:active::before {
+  opacity: 0.7;
+}
 
 .header-middle {
   display: flex;
@@ -592,6 +604,34 @@ img {
   position: absolute;
   margin-top: 97px;
 }
+
+.promo-slider-button::before {
+  content: "";
+
+  width: 10px;
+  height: 10px;
+  background-color: var(--white);
+  border-radius: 50%;
+
+  position: absolute;
+  top: 19px;
+  left: 271px;
+}
+
+.promo-slider-button::after {
+  content: "";
+
+  width: 10px;
+  height: 10px;
+  background-color: var(--red);
+  border: 2px solid var(--white);
+  border-radius: 50%;
+
+  position: absolute;
+  top: 19px;
+  left: 291px;
+}
+
 /* Popular
 ========================= */
 
@@ -641,6 +681,10 @@ img {
   display: flex;
 }
 
+.popular-item:hover {
+  box-shadow: 0px 4px 20px var(--card-shadow);
+}
+
 .popular-item:last-of-type {
   margin-right: 0;
 }
@@ -657,15 +701,16 @@ img {
   right: 0px;
 }
 
-.popular-item a {
+.popular-item-link {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .popular-item:hover .hover-block {
-  display: block;
+  display: flex;
 }
+
 
 .popular-item img {
   width: 185px;
@@ -722,23 +767,10 @@ img {
 
 /* Hover */
 
-/* .hover-block {
-  position: absolute;
-  left: 41px;
-  top: 38px;
-  min-width: 135px;
-  min-height: 87px;
-
-  display: none;
-} */
-
-
-/* почемум-то растягивается на всю ширину,не могу понять в чем дело */
-
 .hover-block {
   position: absolute;
   background-color: var(--white);
-  top: 38px;
+  top: 36px;
   width: 100%;
   min-height: 87px;
 
@@ -747,6 +779,8 @@ img {
   align-items: center;
   justify-content: center;
   padding-bottom: 10px;
+  padding-left: 46px;
+  padding-right: 50px;
 
   display: none;
 }
@@ -761,14 +795,29 @@ img {
   border-radius: 2px;
 
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .hover-link-buy {
   color: var(--white);
-  margin-bottom: 10px;
   background-color: var(--basic-green);
+  box-shadow: inset 0px -3px 0px var(--green-shadow);
+
+  margin-bottom: 10px;
+}
+
+.hover-link-buy::before {
+  content: "";
+  background-image: url(../img/icon-cart.svg);
+  opacity: 0.3;
+
+  width: 15px;
+  height: 15px;
+
+  margin-right: 9px;
+  margin-left: -10px;
+  margin-top: -1px;
 }
 
 .hover-link-buy:hover {
@@ -846,6 +895,15 @@ img {
   margin-bottom: 20px;
 }
 
+.manufacturer-item:hover {
+  box-shadow: 0px 4px 20px var(--card-shadow);
+}
+
+.manufacturer-item:active {
+  opacity: 0.5;
+  box-shadow: 0px 4px 20px var(--card-shadow);
+}
+
 .manufacturer-item:nth-child(4n) {
  margin-right: 0;
 }
@@ -903,6 +961,11 @@ img {
 
 .services-item {
    background-color: var(--blue);
+/*
+   border-top: 1px solid #405069;
+   border-bottom: 1px solid #293449; */
+
+
 }
 
 .services-link {
@@ -916,7 +979,15 @@ img {
   width: 240px;
   height: 62px;
   padding: 15px 130px 12px 22px;
+}
 
+.services-link:not(.services-link-active) {
+  box-shadow: 0px 1px 0px var(--blue-hover), inset 0px 1px 0px var(--blue-shadow);
+}
+
+
+.services-link:not(.services-link-active):hover {
+  background-color: var(--blue-hover);
 }
 
 .services-link-active {
@@ -974,7 +1045,7 @@ img {
   display: flex;
   justify-content: space-between;
   width: 940px;
-  margin: 70px auto 70px;
+  margin: 70px auto 69px;
 
 }
 
@@ -1083,7 +1154,9 @@ img {
 
 /*Catalog-page header
 =================== */
-
+.header-catalog .button-bookmark {
+  transform: translateX(-11px);
+}
 
 .button-basket-active {
   font-size: 18px;
@@ -1091,6 +1164,10 @@ img {
   color: var(--white);
   background-color: var(--red);
   padding-left: 10px;
+}
+
+.header-catalog .header-text {
+  margin-top: 4px;
 }
 
 .user-profile{
@@ -1204,6 +1281,18 @@ img {
   line-height: 18px;
   text-transform: uppercase;
   color: var(--black);
+}
+
+.bread-crumbs-list-item a:hover {
+  border-bottom: 1px solid var(--dark-blue);
+}
+
+.bread-crumbs-list-item a:focus {
+  border-bottom: 1px dashed var(--dark-blue);
+}
+
+.bread-crumbs-list-item a:active {
+  color: var(--red);
 }
 
 .bread-crumbs-list-item {
@@ -1419,12 +1508,10 @@ img {
 
 }
 
-
-
 .checkbox-icon {
   fill: var(--grey);
   position: absolute;
-  top: 0;
+  top: -3px;
   left: 0;
 }
 
@@ -1480,8 +1567,6 @@ img {
   display: block;
 }
 
-/* задался вопросом,почему что бы ховер срабатывал нужен
-или +, или ~,а просто вложенность не срабатывает? */
 
 .radio-input:hover + .radio-icon {
   fill:var(--grey-hover);
@@ -1600,8 +1685,8 @@ img {
   margin-right: 14px;
 }
 
-.button-down:hover,
-.button-down:focus {
+.button-down:hover .sorting-button-down-img,
+.button-down:focus .sorting-button-down-img{
   fill: var(--black);
 }
 
@@ -1612,11 +1697,15 @@ img {
 .sotring-link:not(.sotring-link-active) {
   color: var(--black);
   opacity: 0.3;
-  border-bottom: 1px dashed var(--black);
+  border-bottom: 1px dashed var(--red);
 }
 
 .sotring-link-active {
   color: var(--red);
+}
+
+.sotring-link:hover {
+  border-bottom: 1px solid var(--red);
 }
 
 .sotring-link:not(.sotring-link-active):hover {
@@ -1630,8 +1719,13 @@ img {
 .sotring-link:focus,
 .sotring-link-active:focus {
   color: var(--red);
+  opacity: 1;
 }
 
+.sotring-link:active {
+  color: var(--red);
+
+}
 
 /* Products
 ====================== */
@@ -1665,15 +1759,18 @@ img {
   margin-right: 20px;
   margin-bottom: 18px;
   position: relative;
+}
 
+.products-item:hover {
+  box-shadow: 0px 4px 20px var(--card-shadow);
 }
 
 .products-item:hover .hover-block {
-  display: block;
+  display: flex;
   z-index: 1;
 }
 
-.products-item a{
+.products-item > a{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1742,7 +1839,7 @@ img {
   height: 38px;
 
   padding-left: 33px;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   transform: translateX(6px);
 }
 
