@@ -1306,6 +1306,11 @@ img {
   margin-bottom: 17px;
 }
 
+.bread-crumbs-img {
+  width: 13px;
+  height: 12px;
+}
+
 .bread-crumbs-list-item,
 .bread-crumbs-list-item a {
   font-family: "PT Sans", Arial, sans-serif;
