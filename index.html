@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-<!-- Так как правок не много было,решил пискель перфектнуть сразу всю
-страницу,что бы не отправлять на проверку всего пару правок :)  -->
 
 <head>
   <meta charset="UTF-8">
@@ -10,7 +8,7 @@
     href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.min.css">
 </head>
 
 <body>
@@ -20,7 +18,7 @@
         <a class="header-logo-link">
           <img src="img/logo-technomart.svg" alt="Техномарт" width="108" height="18" class="header-logo">
         </a>
-        <form class="input-search-form" action="echo.htmlacademy.ru" method="post">
+        <form class="input-search-form" action="http://echo.htmlacademy.ru" method="post">
           <input class="input-search" type="text" name="search" id="search-field" placeholder="Поиск:">
           <label class="header-search-icon" for="search-field">
             <span class="visually-hidden">Поле для поиска</span>
@@ -100,8 +98,45 @@
           <div class="slider-content">
             <h3 class="promo-slider-title">Перфораторы</h3>
             <p class="promo-slider-text">Настоящие мужские игрушки</p>
-            <a href="blank.html" class="promo-slider-button button-red">Открыть каталог</a>
+            <a href="catalog.html" class="promo-slider-button button-red">Открыть каталог</a>
           </div>
+          <button class="button-icon button-icon-left" aria-label="Предыдущий слайд">
+            <svg class="slider-icon-left" width="22" height="40" viewBox="0 0 22 40">
+              <path
+                d="M19.9244 0.941467L21.9226 2.98927L4.90699 20.4361L21.978 37.9376L19.9789 39.9854L0.910645 20.4361L19.9244 0.941467Z" />
+            </svg>
+          </button>
+          <button class="button-icon button-icon-right" aria-label="Следующий слайд">
+            <svg class="slider-icon-left" width="22" height="40" viewBox="0 0 22 40">
+              <path
+                d="M19.9244 0.941467L21.9226 2.98927L4.90699 20.4361L21.978 37.9376L19.9789 39.9854L0.910645 20.4361L19.9244 0.941467Z" />
+            </svg>
+          </button>
+          <button class="slider-button slider-button-white" aria-label="Первый слайд"></button>
+          <button class="slider-button slider-button-red" aria-label="Второй слайд"></button>
+        </div>
+        <div class="promo-slider promo-slider-second">
+          <img class="promo-slider-img" src="slider-img-second.jpg" alt="Перфораторы.Настоящие мужские игрушки"
+            width="620" height="266">
+          <div class="slider-content">
+            <h3 class="promo-slider-title">Дрели</h3>
+            <p class="promo-slider-text">Соседям на радость</p>
+            <a href="catalog.html" class="promo-slider-button button-red">Открыть каталог</a>
+          </div>
+          <button class="button-icon button-icon-left" aria-label="Предыдущий слайд">
+            <svg class="slider-icon-left" width="22" height="40" viewBox="0 0 22 40">
+              <path
+                d="M19.9244 0.941467L21.9226 2.98927L4.90699 20.4361L21.978 37.9376L19.9789 39.9854L0.910645 20.4361L19.9244 0.941467Z" />
+            </svg>
+          </button>
+          <button class="button-icon button-icon-right" aria-label="Следующий слайд">
+            <svg class="slider-icon-left" width="22" height="40" viewBox="0 0 22 40">
+              <path
+                d="M19.9244 0.941467L21.9226 2.98927L4.90699 20.4361L21.978 37.9376L19.9789 39.9854L0.910645 20.4361L19.9244 0.941467Z" />
+            </svg>
+          </button>
+          <button class="slider-button slider-button-white" aria-label="Первый слайд"></button>
+          <button class="slider-button slider-button-red" aria-label="Второй слайд"></button>
         </div>
         <div class="promo-item promo-item-green">
           <h3 class="promo-title">Скидки 50%</h3>
@@ -370,12 +405,38 @@
   </footer>
   <section class="map-popup">
     <h2 class="visually-hidden">Карта проезда</h2>
-    <button type="button" aria-label="Закрыть карту"></button>
+    <button class="map-button button-close" type="button" aria-label="Закрыть карту"></button>
     <!-- <iframe width="943" height="449"
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.598942412368!2d30.320894615677183!3d59.938796869048424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1592754430848!5m2!1sru!2sru"
       frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
     <img src="img/map-popup.png" alt="Карта проезда" width="943" height="449">
   </section>
+
+  <section class="write">
+    <h2 class="visually-hidden">Форма обратной связи</h2>
+    <form action="http://echo.htmlacademy.ru" method="post" class="write-form">
+      <div class="write-wrapper-top">
+        <label>
+          Ваше Имя.<br>
+          <input placeholder="Имя Фамилия" type="text" name="name-filed" class="write-input write-input-name"
+            value="Имя Фамилия">
+        </label>
+        <label>
+          Ваш пароль.<br>
+          <input placeholder="email@example.com" type="password" name="password-filed"
+            class="write-input write-input-password">
+        </label>
+      </div>
+      <label class="input-text-label">
+        Текст письма:<br>
+        <input placeholder="В свободной форме" type="text" name="text-filed" class="write-input write-input-text">
+      </label>
+    </form>
+    <div class="write-wrapper-bottom">
+      <a href="blank.html" class="write-button button-red">Отправить</a>
+    </div>
+  </section>
+
 </body>
 
 </html>
