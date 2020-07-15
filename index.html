@@ -8,7 +8,7 @@
     href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/styles.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -116,8 +116,8 @@
           <button class="slider-button slider-button-red" aria-label="Второй слайд"></button>
         </div>
         <div class="promo-slider promo-slider-second">
-          <img class="promo-slider-img" src="slider-img-second.jpg" alt="Перфораторы.Настоящие мужские игрушки"
-            width="620" height="266">
+          <img class="promo-slider-img" src="slider-img-second.jpg" alt="Дрели.Соседям на радость." width="620"
+            height="266">
           <div class="slider-content">
             <h3 class="promo-slider-title">Дрели</h3>
             <p class="promo-slider-text">Соседям на радость</p>
@@ -403,7 +403,7 @@
       </div>
     </div>
   </footer>
-  <section class="map-popup">
+  <section class="popup map-popup">
     <h2 class="visually-hidden">Карта проезда</h2>
     <button class="map-button button-close" type="button" aria-label="Закрыть карту"></button>
     <!-- <iframe width="943" height="449"
@@ -412,31 +412,33 @@
     <img src="img/map-popup.png" alt="Карта проезда" width="943" height="449">
   </section>
 
-  <section class="write">
+  <section class="popup write">
     <h2 class="visually-hidden">Форма обратной связи</h2>
     <form action="http://echo.htmlacademy.ru" method="post" class="write-form">
       <div class="write-wrapper-top">
+        <button class="write-button-close" type="button" aria-label="Закрыть"></button>
         <label>
           Ваше Имя.<br>
-          <input placeholder="Имя Фамилия" type="text" name="name-filed" class="write-input write-input-name"
-            value="Имя Фамилия">
+          <input placeholder="Имя Фамилия" type="text" name="name-filed" class="write-input-name" required>
         </label>
         <label>
           Ваш пароль.<br>
-          <input placeholder="email@example.com" type="password" name="password-filed"
-            class="write-input write-input-password">
+          <input placeholder="email@example.com" type="password" name="password-filed" class="write-input-password"
+            required>
         </label>
       </div>
       <label class="input-text-label">
         Текст письма:<br>
-        <input placeholder="В свободной форме" type="text" name="text-filed" class="write-input write-input-text">
+        <input placeholder="В свободной форме" type="text" name="text-filed" class="write-input write-input-text"
+          required>
       </label>
     </form>
     <div class="write-wrapper-bottom">
-      <a href="blank.html" class="write-button button-red">Отправить</a>
+      <!-- <a href="blank.html" class="write-button button-red"></a> -->
+      <button type="submit" class="write-button button-red">Отправить</button>
     </div>
   </section>
-
+  <script src="/js/script.js"></script>
 </body>
 
 </html>

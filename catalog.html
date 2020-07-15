@@ -8,7 +8,7 @@
     href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/styles.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -45,20 +45,23 @@
           <address class="header-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</address>
         </div>
         <div class="user-profile">
-          <a href="blank.html" class="user-name">
-            <svg class="user-name-icon" width="20" height="19" viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M17.881 14.666C15.737 13.931 13.625 13 12.674 12.276C12.017 11.775 11.904 10.658 12.157 9.861C13.275 8.958 14.021 7.384 14.021 5.583C14.021 2.776 12.221 0.5 10 0.5C7.77902 0.5 5.97901 2.776 5.97901 5.583C5.97901 7.384 6.72501 8.957 7.84201 9.86C8.09501 10.658 7.98302 11.775 7.32502 12.276C6.37502 13 4.26201 13.93 2.11801 14.666C-0.0259852 15.402 1.48343e-05 18.5 1.48343e-05 18.5H20C20 18.5 20.025 15.401 17.881 14.666Z" />
-            </svg>
-            Равшан Джамшутович
-          </a>
-          <a href="blank.html" class="user-name">
-            <svg class="user-name-exit-icon" width="20" height="17" viewBox="0 0 20 17" fill="none">
-              <path d="M20 8.5L11.125 0V6H5.125V11H11.125V17L20 8.5Z" />
-              <path
-                d="M2.10591 13.952V3.048C2.12391 2.672 2.27691 1.991 3.11591 1.991H8.14291V0H3.11591C0.937914 0 0.111914 1.81 0.0869141 3.027V13.973C0.111914 15.189 0.937914 17 3.11591 17H8.14291V15.01H3.11591C2.27691 15.01 2.12391 14.327 2.10591 13.952Z" />
-            </svg>
-          </a>
+          <div class="user-profile-wrapper">
+            <a href="blank.html" class="user-name">
+              <svg class="user-name-icon" width="20" height="19" viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.881 14.666C15.737 13.931 13.625 13 12.674 12.276C12.017 11.775 11.904 10.658 12.157 9.861C13.275 8.958 14.021 7.384 14.021 5.583C14.021 2.776 12.221 0.5 10 0.5C7.77902 0.5 5.97901 2.776 5.97901 5.583C5.97901 7.384 6.72501 8.957 7.84201 9.86C8.09501 10.658 7.98302 11.775 7.32502 12.276C6.37502 13 4.26201 13.93 2.11801 14.666C-0.0259852 15.402 1.48343e-05 18.5 1.48343e-05 18.5H20C20 18.5 20.025 15.401 17.881 14.666Z" />
+              </svg>
+              Равшан Джамшутович
+            </a>
+            <a href="blank.html" class="user-name">
+              <span class="visually-hidden">Выйти из профиля</span>
+              <svg class="user-name-exit-icon" width="20" height="17" viewBox="0 0 20 17" fill="none">
+                <path d="M20 8.5L11.125 0V6H5.125V11H11.125V17L20 8.5Z" />
+                <path
+                  d="M2.10591 13.952V3.048C2.12391 2.672 2.27691 1.991 3.11591 1.991H8.14291V0H3.11591C0.937914 0 0.111914 1.81 0.0869141 3.027V13.973C0.111914 15.189 0.937914 17 3.11591 17H8.14291V15.01H3.11591C2.27691 15.01 2.12391 14.327 2.10591 13.952Z" />
+              </svg>
+            </a>
+          </div>
           <ul class="user-profile-list">
             <li><a href="blank.html" class="user-profile-link user-profile-link-orders">Мои заказы</a></li>
             <li><a href="blank.html" class="user-profile-link">Личный кабинет</a></li>
