@@ -2149,7 +2149,6 @@ img {
   bottom: 0;
   left: 0;
   margin: auto;
-  display: none;
 }
 
 /* map-popup
@@ -2159,12 +2158,32 @@ img {
   display: none;
   width: 944px;
   height: 450px;
+}
+
+.map-show {
+  display: block;
  }
 
- .map-popup button {
+.button-close {
   right: 30px;
   top: 30px;
  }
+
+ .map-popup iframe {
+  position: relative;
+  z-index: 2;
+
+  border: none;
+}
+
+.map-popup img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  margin: 0;
+}
 
 /* Basket
 =========================== */
