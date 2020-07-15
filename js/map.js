@@ -1,4 +1,4 @@
-var maplink = document.querySelector(".contacts-map-link");
+var mapLink = document.querySelector(".contacts-map-link");
 
 var mapPopup = document.querySelector(".map-popup");
 var mapClose = mapPopup.querySelector(".button-close");
